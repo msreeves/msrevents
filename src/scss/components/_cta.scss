@@ -1,0 +1,14 @@
+.cta {
+    background-color: #839dff;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    >.container {
+        position: relative;
+        z-index: 2;
+    }
+
+    .panel {
+        background-color: $white;
+    }
+}

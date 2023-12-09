@@ -1,0 +1,285 @@
+body {
+    background-color: $blue;
+    margin: 0;
+    color: $black;
+    font-size: 1rem;
+    line-height: 1.5;
+
+    section {
+        padding: 5rem 0;
+
+        &#advert {
+            padding: 2rem 0;
+            background: $white;
+        }
+    }
+}
+
+.comment-meta {
+    background-color: $blue;
+
+    .comment-author {
+        display: none;
+    }
+}
+
+
+p {
+    font-family: $body-text;
+    margin-bottom: 1.5em;
+}
+
+span {
+    font-family: $body-text;
+}
+
+button {
+    color: $grey;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+input {
+    color: $grey;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.form-control::placeholder {
+    color: $black;
+    opacity: 1;
+}
+
+#searchform input[type=text]:focus {
+    color: $black;
+}
+
+select {
+    color: $grey;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+optgroup {
+    color: $grey;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+textarea {
+    color: $grey;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $header-text;
+    letter-spacing: 0.04em;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+}
+
+h1 {  
+    font-size: 3.6rem;
+    text-align: center;
+}
+
+.advert {
+    p {
+        font-size: 1.2rem;
+        text-decoration-line: underline;
+        text-decoration-style: double;
+        font-weight: 800;
+        color: $primary;
+        cursor: pointer;
+        text-align: center;
+    }
+}
+
+.search-highlight {
+    background: $primary;
+    color: $white;
+    padding: 0 10px;
+}
+
+dfn {
+    font-style: italic;
+}
+
+cite {
+    font-style: italic;
+}
+
+em {
+    font-style: italic;
+}
+
+i {
+    font-style: italic;
+}
+
+blockquote {
+    margin: 0 1.5em;
+}
+
+address {
+    margin: 0 0 1.5em;
+}
+
+pre {
+    background: #eee;
+    font-family: "Courier 10 Pitch", courier, monospace;
+    line-height: 1.6;
+    margin-bottom: 1.6em;
+    max-width: 100%;
+    overflow: auto;
+    padding: 1.6em;
+}
+
+code {
+    font-family: monaco, consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+
+kbd {
+    font-family: monaco, consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+
+tt {
+    font-family: monaco, consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+
+var {
+    font-family: monaco, consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+
+abbr {
+    border-bottom: 1px dotted #666;
+    cursor: help;
+}
+
+acronym {
+    border-bottom: 1px dotted #666;
+    cursor: help;
+}
+
+mark {
+    background: #fff9c0;
+    text-decoration: none;
+}
+
+ins {
+    background: #fff9c0;
+    text-decoration: none;
+}
+
+big {
+    font-size: 125%;
+}
+
+hr {
+    background-color: $grey;
+    border: 0;
+    height: 1px;
+    margin-bottom: 1.5em;
+}
+
+ul {
+    margin: 0 0 1.5em 3em;
+    list-style: disc;
+}
+
+ol {
+    --icon-space: 1.3em;
+    list-style: none;
+    padding: 0;
+
+    &.commentlist {
+        li {
+            padding-left: var(--icon-space);
+
+            &:before {
+                content: "\f0f3";
+                font-family: FontAwesome;
+                display: inline-block;
+                font-size: 2rem;
+            }
+        }
+    }
+}
+
+dt {
+    font-weight: 700;
+}
+
+dd {
+    margin: 0 1.5em 1.5em;
+}
+
+embed {
+    max-width: 100%;
+}
+
+iframe {
+    width: 100%;
+}
+
+object {
+    max-width: 100%;
+}
+
+figure {
+    margin: 1em 0;
+}
+
+table {
+    margin: 0 0 1.5em;
+    width: 100%;
+}
+
+a {
+    color: $primary;
+
+    &:visited {
+        color: $black;
+    }
+
+    & {
+        &:hover {
+            color: $black;
+            outline: 0;
+        }
+
+        &:focus {
+            color: $black;
+        }
+
+        &:active {
+            color: $black;
+            outline: 0;
+        }
+    }
+}
+    .wp-caption {
+        margin-bottom: 1.5em;
+        max-width: 100%;
+
+        img[class*="wp-image-"] {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .wp-caption-text {
+            text-align: center;
+        }
+    }
+
+    .wp-caption-text {
+        margin: 0.8075em 0;
+    }

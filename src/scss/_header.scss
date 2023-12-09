@@ -1,0 +1,290 @@
+header {
+  .navbar {
+    background-color: $primary;
+
+    .navbar-brand {
+      max-width: 120px;
+    }
+
+    .navbar-nav {
+      #cssmenu {
+        line-height: 1;
+        display: block;
+        padding: 0;
+        margin: 0;
+        width: auto;
+
+        ul {
+          line-height: 1;
+
+          li.has-sub {
+            &:hover {
+              >a {
+                &:after {
+                  top: 0;
+                  bottom: 0;
+                }
+
+                background: $black;
+                border-color: $black;
+                padding-bottom: 13px;
+                padding-top: 13px;
+                top: -1px;
+                z-index: 999;
+              }
+
+              >ul {
+                display: block;
+              }
+
+              >div {
+                display: block;
+              }
+            }
+
+            >a {
+              &:hover {
+                background: $black;
+                border-color: $primary;
+              }
+            }
+          }
+
+          li {
+            >ul {
+              display: none;
+              width: auto;
+              position: absolute;
+              top: 50px;
+              padding: 10px 0;
+              background: $primary;
+              border-radius: 0 0 5px 5px;
+              z-index: 999;
+              width: 200px;
+
+              @include media(">phone", "<=tablet") {
+                display: block;
+                width: 100%;
+                position: relative;
+                top: 0;
+              }
+
+              &:hover {
+                background: $black;
+
+                @include media(">phone", "<=tablet") {
+                  background: $primary;
+                }
+              }
+
+              li {
+                display: block;
+                list-style: inside none;
+                padding: 10px 0;
+                margin: 0;
+                position: relative;
+
+                a {
+                  outline: none;
+                  display: block;
+                  position: relative;
+                  margin: 0;
+                  padding: 8px 20px;
+                }
+              }
+            }
+
+            >div {
+              display: none;
+              width: auto;
+              position: absolute;
+              top: 50px;
+              padding: 10px 0;
+              background: $black;
+              border-radius: 0 0 5px 5px;
+              z-index: 999;
+            }
+          }
+        }
+
+        li {
+          line-height: 1;
+        }
+
+        a {
+          line-height: 1;
+        }
+
+        >ul {
+          list-style: inside none;
+          padding: 0;
+          margin: 0;
+
+          >li {
+            margin: 0;
+            display: block;
+            position: relative;
+
+            @include media(">phone", "<=tablet") {
+              display: block;
+              width: 100%;
+              position: relative;
+              top: 0;
+              background-color: $black;
+              border-bottom: 1px solid $white;
+            }
+
+            >a {
+              outline: none;
+              display: block;
+              position: relative;
+              padding: 12px 20px;
+              text-align: center;
+            }
+
+            &:first-child {
+              >a {
+                border-radius: 5px 0 0 5px;
+              }
+            }
+          }
+
+          >li.has-sub {
+            &:hover {
+              >a {
+                &:before {
+                  top: 19px;
+                }
+              }
+            }
+
+            ul {
+              span {
+                @include media(">phone", "<tablet") {
+                  font-size: 1.2rem;
+                }
+              }
+            }
+          }
+        }
+
+        span {
+          font-family: $header-text;
+        }
+      }
+
+      ul {
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        margin: 0;
+
+        @include media(">phone", "<=tablet") {
+          display: block;
+        }
+
+        a {
+          font-family: $header-text;
+          font-size: 1.6rem;
+          letter-spacing: 0.04em;
+          text-decoration: none;
+          color: $white;
+          font-weight: 800;
+          position: relative;
+
+          &::after {
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            content: '';
+            width: 100%;
+            height: 2px;
+            background: $white;
+            transform: scale(0, 1);
+            transform-origin: right top;
+            transition: transform .3s;
+
+            @include media(">phone", "<tablet") {
+              background: none;
+            }
+          }
+
+          &:hover {
+            &::after {
+              transform-origin: left top;
+              transform: scale(1, 1);
+            }
+          }
+        }
+
+        li {
+          margin: 0 10px;
+
+          @include media(">phone", "<tablet") {
+            padding: 1rem;
+            text-align: center;
+          }
+        }
+      }
+    }
+
+    .nav-tabs {
+      border: 0;
+      justify-content: center;
+      padding: 10px 0;
+
+      li {
+        margin: 0.5rem 0 0 2rem;
+      }
+    }
+
+    ul.nav-tabs {
+      margin: 0;
+    }
+
+    .navbar-toggler {
+      span {
+        display: block;
+        background-color: $grey;
+        height: 3px;
+        width: 25px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        position: relative;
+        left: 0;
+        opacity: 1;
+        transition: all 0.35s ease-out;
+        transform-origin: center left;
+
+        &:nth-child(1) {
+          transform: translate(0%, 0%) rotate(0deg);
+          margin-top: 0.3em;
+        }
+
+        &:nth-child(2) {
+          opacity: 1;
+        }
+
+        &:nth-child(3) {
+          transform: translate(0%, 0%) rotate(0deg);
+        }
+      }
+
+      &:not(.collapsed) {
+        span {
+          &:nth-child(1) {
+            transform: translate(15%, -33%) rotate(45deg);
+          }
+
+          &:nth-child(2) {
+            opacity: 0;
+          }
+
+          &:nth-child(3) {
+            transform: translate(15%, 33%) rotate(-45deg);
+          }
+        }
+      }
+    }
+  }
+}

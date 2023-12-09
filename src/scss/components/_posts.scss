@@ -1,0 +1,115 @@
+article {
+    background-color: $white;
+        padding: 20px;
+
+        &.post {
+                .entry-content {
+                    p {
+                        &:first-of-type {
+                            &:first-letter {
+                                font-size: 8.5rem;
+                                font-weight: bold;
+                                color: $primary;
+                            }
+                        }
+                    }
+                }
+            }
+
+        .entry-header {
+                max-width: 72rem;
+                width: calc(100% - 4rem);
+                margin-left: auto;
+                margin-right: auto;
+                text-align: center;
+            }
+        
+            .entry-content {
+                max-width: 58rem;
+                width: calc(100% - 4rem);
+                margin-left: auto;
+                margin-right: auto;
+                padding: 3rem 0;
+        
+                p {
+                    font-size: 1.6rem;
+                    line-height: 1.476;
+                }
+            }
+}
+
+.panel {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: $white;
+    padding: 20px;
+    margin-bottom: 20px;
+
+    .listing-sponsored-panel {
+            padding: 10px;
+    
+            h3 {
+                color: $primary;
+            }
+    
+            p {
+                color: $primary;
+            }
+        }
+    
+        .listing-text {
+            padding: 20px;
+        }
+
+    button {
+        width: 100%;
+    }
+
+    span {
+        background-color: $blue;
+        color: $white;
+        margin: 0 5px 0 0;
+        padding: 0 5px;
+        font-size: 18px;
+        display: inline-block;
+    }
+}
+
+.nav-tabs {
+        display: flex;
+        justify-content: center;
+        border-bottom: none;
+
+        li {
+            margin: 10px;
+            font-family: $header-text;
+        }
+}
+
+.pagination .nav-links {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.pagination a.page-numbers, span.page-numbers {
+    background: $primary;
+        text-transform: uppercase;
+        border: none;
+        border-radius: 0;
+        color: $white;
+        display: inline-block;
+        letter-spacing: 0.0333em;
+        line-height: 1.25;
+        padding: 1rem;
+        text-align: center;
+        box-shadow: 0 0 1px #ccc;
+        -webkit-transition: all 0.5s ease-in-out;
+        font-family: inherit;
+        margin: 0;
+        overflow: visible;
+        -webkit-appearance: button;
+        text-decoration: none;
+        margin: 0 5px;
+}
