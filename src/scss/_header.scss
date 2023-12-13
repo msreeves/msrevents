@@ -6,7 +6,12 @@ header {
       max-width: 120px;
     }
 
-    .navbar-nav {
+     .navbar-nav {
+      height: 60px;
+
+      @include media(">phone", "<=tablet") {
+          height: auto;
+        }
       #cssmenu {
         line-height: 1;
         display: block;

@@ -21,19 +21,43 @@ get_header();
 					<h3><?php the_archive_description(); ?></h3>
 					 <?php get_template_part( 'inc/controllers/searchbar' ); ?>
 				</div>
+					<div class="row">
+			<?php $order = get_posts( array('orderby' => 'publish_date', 'order' => 'ASC') );			
+			while ( have_posts($order) ) : ?>
+			<?php the_post(); ?>
+			 		<div class="col-md-4">
+			<div class="post panel">  
+        <div class="listing-image"> 
+            	<?php the_post_thumbnail(); ?>
+						         <?php
+if(in_category(6)){
+?>
+<span class="sponsored">This is Sponsored content</span>
+<?php } ?>   
+            </div>
+            <div class="listing-text">
+              <p>   <?php
+        $terms = get_the_terms( get_the_ID(), 'category' );
 
-			<div class="container">
-			<div class="row">
-			<?php
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
-				get_template_part( 'templates/partials/post-listing/listing-posts' );
-				
+if( $terms && ! is_wp_error( $terms ) ){
+    foreach( $terms as $term ) {
+        if( get_queried_object_id() == $term->parent ){
+            echo '<a href="' . esc_url( get_category_link( $term->term_id ) ) .
+            '"><span>' . $term->name . '</span></a>';
+        }
+    }
+} ?>
 
-			endwhile;
-
-			echo '<section>';
+                 </p>  
+            <h3><?php the_title() ?></h3>              
+                     <p><?php echo wpse_custom_excerpts(30); ?></p>
+                      <a href="<?php echo the_permalink(); ?>"><button>Read more</button></a>
+                    </div>
+                </div>
+                    </div>
+			<?php endwhile; ?>
+			</div>
+			<?php echo '<section>';
 			the_posts_pagination( array(
 'mid_size' => 2,
 'prev_text' => __( 'Previous', 'textdomain' ),

@@ -10,14 +10,14 @@ get_header();
 ?>
   <section>
   <div class="container">
-      <div class="panel">
+    <div class="post panel">
         <?php the_title( '<h1>', '</h1>' ); ?>
           <?php the_content(); ?>
              <?php get_template_part( 'inc/controllers/searchbar' ); ?>
-      </div>
+</div>
 <div class="post-tabs">
 
-  <?php $post_categories = get_terms('category'); // get all the categories ?>
+  <?php $post_categories = get_categories('parent=0'); // get all the categories ?>
 
   <!-- Nav tabs -->
   <ul class="nav nav-tabs">
@@ -39,6 +39,8 @@ get_header();
       $args = array(
         'post_type' => 'post',
         'posts_per_page' => -1,
+        'orderby' => 'publish_date',
+        'order' => 'ASC'
 
       );
       $all_posts = new WP_Query( $args );		
@@ -47,7 +49,7 @@ get_header();
       <?php if ( $all_posts->have_posts() ) : ?>
             <div class="row">
           <?php while ( $all_posts->have_posts() ) : $all_posts->the_post(); ?>	
-              <?php get_template_part( 'templates/partials/post-listing/listing-posts' ); ?>
+              <?php get_template_part( 'templates/partials/post-listing/posts/maincategory' ); ?>
           <?php endwhile; ?>
           <?php wp_reset_query() ?>
       </div>
@@ -76,7 +78,7 @@ get_header();
         <?php if ( $posts->have_posts() ) : ?>
               <div class="row">
           <?php while ( $posts->have_posts() ) : $posts->the_post(); ?>	
-          <?php get_template_part( 'templates/partials/post-listing/listing-posts' ); ?>
+         <?php get_template_part( 'templates/partials/post-listing/posts/subcategory' ); ?>
           <?php endwhile; ?>
           <?php wp_reset_query() ?>
       </div>

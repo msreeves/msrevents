@@ -31,6 +31,12 @@ p {
 
 span {
     font-family: $body-text;
+
+    &.sponsored {
+            text-transform: uppercase;
+            text-align: center;
+            width: 100%;
+        }
 }
 
 button {
@@ -196,7 +202,6 @@ ul {
 
 ol {
     --icon-space: 1.3em;
-    list-style: none;
     padding: 0;
 
     &.commentlist {

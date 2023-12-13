@@ -9,9 +9,9 @@
                 echo $category->cat_name . ' ';
                 echo '</span>';
                 } ?>
-                 </p>  
+                 </p>    
             <h3><?php the_title() ?></h3>                  
-                     <p><?php echo wpse_custom_excerpts(30); ?></p>
+                      <p><?php echo wpse_custom_excerpts(30); ?></p>
                       <a href="<?php echo the_permalink(); ?>"><button>Read more</button></a>
                     </div>
                 </div>

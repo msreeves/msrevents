@@ -162,7 +162,7 @@ function bsubash_loadmore_ajax_handler(){
 	if( have_posts() ) :
         echo '<div class="row">';
 		while(have_posts()): the_post();	
-		echo get_template_part( 'templates/partials/post-listing/listing-posts' );
+		echo get_template_part( 'templates/partials/post-listing/posts/maincategory' );
     endwhile;
 		echo '</div>';
 	endif;

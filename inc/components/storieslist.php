@@ -23,6 +23,7 @@ $type = $args['type'];
       $latests = new WP_Query(array(
       	'post_type' => 'post',
       	'posts_per_page' => 3,
+         'category__not_in' => array( 6 ),
       	'paged' => $paged,
          'tax_query' => array(
             array(
@@ -36,7 +37,7 @@ $type = $args['type'];
               <div class="row">
       <?php while($latests->have_posts()): $latests->the_post();	?>	
         
-      <?php get_template_part( 'templates/partials/post-listing/listing-posts' ); ?>
+        <?php get_template_part( 'templates/partials/post-listing/posts/maincategory' ); ?>
 
        <?php endwhile; ?>
    </div>

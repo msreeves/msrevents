@@ -4,6 +4,14 @@ header .navbar {
 header .navbar .navbar-brand {
   max-width: 120px;
 }
+header .navbar .navbar-nav {
+  height: 60px;
+}
+@media (min-width: 321px) and (max-width: 768px) {
+  header .navbar .navbar-nav {
+    height: auto;
+  }
+}
 header .navbar .navbar-nav #cssmenu {
   line-height: 1;
   display: block;
@@ -436,6 +444,11 @@ p {
 span {
   font-family: "DM Sans", sans-serif;
 }
+span.sponsored {
+  text-transform: uppercase;
+  text-align: center;
+  width: 100%;
+}
 
 button {
   color: #f2f2f2;
@@ -603,7 +616,6 @@ ul {
 
 ol {
   --icon-space: 1.3em;
-  list-style: none;
   padding: 0;
 }
 ol.commentlist li {
