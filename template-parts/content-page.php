@@ -14,9 +14,8 @@
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
 
-	<?php msrevents_post_thumbnail(); ?>
-
 	<div class="entry-content">
+		<?php get_template_part( 'templates/partials/featured-image' ); ?>
 		<?php
 		the_content();
 

@@ -52,9 +52,10 @@ if (!empty($previd)){
   <div class="col-lg-6 mx-auto">
         <div class="post panel">  
         <div class="listing-image">
-            	<?php echo wp_kses_post( get_the_post_thumbnail( $previd ) ); ?>
-                      			         <?php
-if(in_category(10)){
+            	<?php echo wp_kses_post( get_the_post_thumbnail($previd));
+echo get_post(get_post_thumbnail_id())->post_excerpt; ?>
+                  			         <?php
+if(in_category(6)){
 ?>
 <span class="sponsored">This is Sponsored content</span>
 <?php } ?> 
@@ -83,7 +84,8 @@ if (!empty($nextid)){
   <div class="col-lg-6 mx-auto">
         <div class="post panel">  
         <div class="listing-image">
-            	<?php echo wp_kses_post( get_the_post_thumbnail( $nextid ) ); ?>
+            	 	<?php echo wp_kses_post( get_the_post_thumbnail($nextid));
+echo get_post(get_post_thumbnail_id())->post_excerpt; ?>
                   			         <?php
 if(in_category(10)){
 ?>

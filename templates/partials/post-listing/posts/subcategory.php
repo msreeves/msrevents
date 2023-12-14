@@ -1,7 +1,7 @@
 		<div class="col-md-4">
 			<div class="post panel">  
         <div class="listing-image">
-            	<?php the_post_thumbnail(); ?>
+              <?php get_template_part( 'templates/partials/featured-image' ); ?>
                     			         <?php
 if(in_category(6)){
 ?>

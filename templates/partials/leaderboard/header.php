@@ -27,14 +27,20 @@
                       <div class="col-md-8"> 
                 <div class="panel">
 				<div class="my-auto mx-auto">
-                     <a href="<?php echo the_field('link' ,  $slide->ID);?>" target="_blank">
+                     <  <?php
+            $link = get_field('link', $slide->ID);
+            $link_url = $link['url'];
+            $link_title = $link['title'];
+            $link_target = $link['target'] ? $link['target'] : '_self';
+    ?>
+   <a href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"> 
                                                <?php $image = wp_get_attachment_image_src(
                                                    get_post_thumbnail_id(
                                                        $slide->ID
                                                    ),
                                                    "single-post-thumbnail"
                                                ); ?>
-                                                <img src="<?php echo $image[0]; ?>" alt=""> 
+                                                <img src="<?php echo $image[0]; ?>" alt="<?php the_post_thumbnail_caption(); ?>"> 
                                             </a>
                                             </div>
                             </div>

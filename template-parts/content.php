@@ -46,10 +46,10 @@ if(in_category(6)){
                 <?php echo get_the_date(); ?>
 		</p><!-- .entry-meta -->
 		<?php endif; ?>
-        <?php get_template_part('templates/partials/featured-image'); ?>
 			</div><!-- .entry-header -->
 
 	<div class="entry-content">
+	<?php get_template_part('templates/partials/featured-image'); ?>
 		<?php
 		the_content(
 			sprintf(
