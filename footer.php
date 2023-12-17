@@ -50,21 +50,22 @@ if ( $has_footer_menu || $has_social_menu ) {
   foreach ($menus as $menu) 
   {
 
-    if ($menu->term_id == $menu_locations[ $location_id ]) 
+       if ($menu->term_id == $menu_locations[ $location_id ]) 
     {
       echo '<h2>'.$menu->name.'</h2>';
       // Get the items for this menu
       $menu_items = wp_get_nav_menu_items($menu);
-
+      echo '<div class="d-flex flex-wrap justify-content-evenly">';
       foreach ( $menu_items as $item )
       {
 
         $id = get_post_meta( $item->ID, '_menu_item_object_id', true );
         $page = get_page( $id );
         //$link = get_page_link( $id ); ?>
-<a href="<?php echo $item->url; ?> " target="_blank"><i class="fa-brands fa-<?php echo $item->title ?> fa-2xl"></i></a>
+<a href="<?php echo $item->url; ?> " target="_blank"><i class="fa-brands fa-<?php echo $item->title ?> fa-2xl mb-3"></i></a>
   <?php 
       }
+      echo '</div';
 
       break;
     }

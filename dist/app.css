@@ -340,6 +340,12 @@ article .entry-content {
   margin-right: auto;
   padding: 3rem 0;
 }
+@media (min-width: 321px) and (max-width: 768px) {
+  article .entry-content {
+    margin: 0;
+    width: 100%;
+  }
+}
 article .entry-content p {
   font-size: 1.6rem;
   line-height: 1.476;
@@ -372,6 +378,7 @@ article .entry-content p {
   display: flex;
   justify-content: center;
   border-bottom: none;
+  margin: 0;
 }
 .nav-tabs li {
   margin: 10px;
@@ -501,6 +508,16 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   font-size: 3.6rem;
   text-align: center;
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  h1 {
+    font-size: 2.6rem;
+  }
+}
+@media (min-width: 321px) and (max-width: 768px) {
+  h1 {
+    font-size: 2.2rem;
+  }
 }
 
 .advert p {
@@ -953,6 +970,7 @@ img {
   background-size: cover;
   background-repeat: no-repeat;
   width: 100%;
+  height: 100vh;
 }
 
 .listing-video iframe {
@@ -1062,7 +1080,13 @@ footer .navbar-nav a:hover::after {
   transform: scale(1, 1);
 }
 footer .navbar-nav li {
-  margin: 0 10px;
+  margin: 10px;
+  font-size: 1.6rem;
+}
+@media (min-width: 321px) and (max-width: 768px) {
+  footer .navbar-nav li:last-of-type {
+    margin-bottom: 2rem;
+  }
 }
 footer .navbar-nav .social-media .fa-brands {
   color: #fff;

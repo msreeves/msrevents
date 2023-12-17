@@ -30,6 +30,11 @@ article {
                 margin-left: auto;
                 margin-right: auto;
                 padding: 3rem 0;
+
+                @include media(">phone", "<=tablet") {
+                        margin: 0;
+                        width: 100%;
+                    }
         
                 p {
                     font-size: 1.6rem;
@@ -68,6 +73,7 @@ article {
         display: flex;
         justify-content: center;
         border-bottom: none;
+        margin: 0;
 
         li {
             margin: 10px;

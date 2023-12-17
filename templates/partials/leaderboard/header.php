@@ -27,7 +27,7 @@
                       <div class="col-md-8"> 
                 <div class="panel">
 				<div class="my-auto mx-auto">
-                     <  <?php
+                     <?php
             $link = get_field('link', $slide->ID);
             $link_url = $link['url'];
             $link_title = $link['title'];

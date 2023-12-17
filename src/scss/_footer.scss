@@ -41,9 +41,16 @@ footer {
                 }
             }
     
-            li {
-                margin: 0 10px;
-            }
+                           li {
+                               margin: 10px;
+                                font-size: 1.6rem;
+            
+                @include media(">phone", "<=tablet") {
+                    &:last-of-type {
+                        margin-bottom: 2rem;
+                    }
+                }
+                           }
 
                         .social-media {
             

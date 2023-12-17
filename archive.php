@@ -25,7 +25,7 @@ get_header();
 			<?php $order = get_posts( array('orderby' => 'publish_date', 'order' => 'ASC') );			
 			while ( have_posts($order) ) : ?>
 			<?php the_post(); ?>
-			 		<div class="col-md-4">
+			 		<div class="col-lg-4 col-md-6">
 			<div class="post panel">  
         <div class="listing-image"> 
             	<?php get_template_part( 'templates/partials/featured-image' ); ?>
