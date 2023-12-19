@@ -6,7 +6,8 @@ $venue = get_field('venue');
 
 <div class="row g-0 mb-5">
      <div class="col-md-6"> 
-        <?php get_template_part( 'templates/partials/featured-image' ); ?>
+        <?php the_post_thumbnail();
+echo get_post(get_post_thumbnail_id())->post_excerpt; ?>
     </div>
      <div class="col-md-6">
         <div class="panel text-center">
