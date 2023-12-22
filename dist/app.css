@@ -1,3 +1,14 @@
+/*
+Theme Name: msrevents
+Theme URI: https: //www.msreeves.co.uk/events
+Description: This is my MSR events theme created from scratch files in Wordpress, it is a Wordpress events website to is focused on a event heavy based website (Create Custom Posts, posts split by categories etc, hosting sub-events). It is built with Node.js modules and compiled with sass to complie css with webpack and laravel-mix.
+Author: Michael Reeves
+Author URI: https://www.msreeves.co.uk
+Version: 1.0.0
+Requires at least: 6.4 
+Tested up to: 6.4.2 
+Requires PHP: 7.4
+*/
 header .navbar {
   background-color: #0E4C92;
 }
@@ -293,7 +304,7 @@ input[type=datetime],
 input[type=datetime-local],
 input[type=color],
 textarea {
-  color: #666;
+  color: #000;
   border-bottom: 2px solid #000;
   border-radius: 3px;
   padding: 3px;
@@ -887,16 +898,6 @@ input[type=datetime-local]:focus {
 }
 
 input[type=color]:focus {
-  color: #fff;
-}
-
-textarea {
-  font-family: inherit;
-  font-size: 100%;
-  line-height: 1.15;
-  margin: 0;
-}
-textarea:focus {
   color: #fff;
 }
 

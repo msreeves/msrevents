@@ -235,17 +235,6 @@ input[type="color"] {
     }
 }
 
-textarea {
-    &:focus {
-        color: $white;
-    }
-
-    font-family: inherit;
-    font-size: 100%;
-    line-height: 1.15;
-    margin: 0;
-}
-
 input {
     font-family: inherit;
     font-size: 100%;
