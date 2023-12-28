@@ -10,7 +10,7 @@ $heading = $args["title"];
 $introduction = $args["introduction"];
 ?>
 
-        <section>
+        <section class="publication">
           <div class="container">
          <div class="panel">
           <h1 class="animate__animated animate__backInLeft"><?php echo $heading;?></h1>
@@ -19,7 +19,7 @@ $introduction = $args["introduction"];
        <?php
        $args = [
            "post_type" => 'publication',
-           "posts_per_page" => -1,
+           "posts_per_page" => 1,
        ];
        $all_posts = new WP_Query($args);
        ?>
@@ -27,17 +27,13 @@ $introduction = $args["introduction"];
       <?php if ($all_posts->have_posts()): ?>
             <div class="row g-0">
           <?php while ($all_posts->have_posts()):
-              $all_posts->the_post(); ?>	                
-                 <div class="carousel">
-			                <div class="carousel-row">       
+              $all_posts->the_post(); ?>	                     
                           <?php get_template_part(
                               "templates/partials/post-listing/listing-publication"
                           ); ?> 
           <?php
           endwhile; ?>
           <?php wp_reset_query(); ?>
-      </div>
-       </div>
                           </div>
       <?php endif; ?>
        </div>

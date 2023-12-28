@@ -42,6 +42,20 @@ img {
 
 }
 
+.publication {
+    .featured-media-inner {
+    img {
+            object-fit: contain;
+            height: 80vh;
+        }
+    }
+    .panel {
+        button {
+            width: auto;
+        }
+    }
+}
+
 .post {
     .listing-image {
         overflow: hidden;

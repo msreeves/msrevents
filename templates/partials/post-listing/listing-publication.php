@@ -1,11 +1,20 @@
-        <div class="col-lg-4 mx-auto">
+        <div class="col-lg-4">
            <div class="panel">
            <?php 
 $link = get_field('link');
     $link_url = $link['url'];
-    $link_title = $link['title'];
-    $link_target = $link['target'] ? $link['target'] : '_self';
     ?>
-    <a class="m-1" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"> <?php get_template_part( 'templates/partials/featured-image' ); ?></a>
+    <a class="m-1" href="<?php echo esc_url( $link_url ); ?>" target="_blank"> <?php get_template_part( 'templates/partials/featured-image' ); ?></a>
           </div>
          </div>
+        <div class="col-lg-8">
+           <div class="panel">
+            <div class="my-auto">
+             <h2><?php the_title(); ?></h1>	
+             <p> <?php the_field('summary'); ?></p>
+              <a href="<?php echo esc_url( $link_url ); ?>" target="_blank"><button>Read more</button></a>
+               </div>
+             </div>
+         </div>
+
+
