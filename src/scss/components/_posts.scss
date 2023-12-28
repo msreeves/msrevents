@@ -1,6 +1,5 @@
 article {
     background-color: $white;
-        padding: 20px;
 
         &.post {
                 .entry-content {
@@ -50,6 +49,7 @@ article {
     background-color: $white;
     padding: 20px;
     margin-bottom: 20px;
+    border-radius: 0.2rem;
     
         .listing-text {
             padding: 20px;

@@ -330,7 +330,6 @@ textarea {
 
 article {
   background-color: #fff;
-  padding: 20px;
 }
 article.post .entry-content p:first-of-type:first-letter {
   font-size: 8.5rem;
@@ -369,6 +368,7 @@ article .entry-content p {
   background-color: #fff;
   padding: 20px;
   margin-bottom: 20px;
+  border-radius: 0.2rem;
 }
 .panel .listing-text {
   padding: 20px;
@@ -990,7 +990,7 @@ img {
 .listing-image .icon img {
   -o-object-fit: contain;
      object-fit: contain;
-  height: 30vh;
+  height: 10vh;
 }
 .listing-image img {
   margin: 0;

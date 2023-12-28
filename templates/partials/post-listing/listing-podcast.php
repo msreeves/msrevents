@@ -40,23 +40,22 @@ if( $image ):
     </div>
          <div class="col-md-8">
             <div class="d-flex flex-column h-100">
-                <div class="m-auto">
+                <div class="m-auto p-3">
             <h2><?php echo $podcaster_term->name; ?></h2>
            <?php echo $podcaster_term->description; ?>
 </div>
 </div>
         </div>
         <div class="col-sm-12">
-             <div class="d-flex flex-row">
     <?php
     if ( $podcaster_query->have_posts() ) : while ( $podcaster_query->have_posts() ) : $podcaster_query->the_post(); ?>
-        <div class="p-5">
+        <div class="text-center p-5">
                 	<h2><?php the_title(); ?> </h2>  
                      <p><span> Series <?php print get_field('series') ?> </span><span> Episode <?php print get_field('episode') ?></span> <i class="fa fa-clock p-1" aria-hidden="true"></i><?php print get_field('runtime') ?> </p>
+                     <?php print get_field('summary') ?>
                 <p> <audio controls src="<?php echo get_field('file') ?>"><a href="<?php echo get_field('file') ?>"> Download audio </a> </audio></p>
-</div>
+    </div>
     <?php endwhile; endif; ?>
-        </div>
         </div>
     </div>
 </section>
