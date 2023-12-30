@@ -38,7 +38,7 @@ $sections = $args['content'];
       </div>
            <?php } elseif ($layout == 'videoimagetext') { ?>     
       <div class="row g-0 mb-5">
-         <div class="col-md-6">
+         <div class="col-xl-6 col-lg-6">
             <div class="panel">
                <div class="my-auto">
                   <?php if ( $video ) : ?>
@@ -53,7 +53,7 @@ $sections = $args['content'];
                </div>
             </div>
          </div>
-         <div class="col-md-6">
+         <div class="col-xl-6 col-lg-6">
             <div class="panel">
                <div class="my-auto text-center">
                   <h1 class="animate__animated animate__backInLeft"><?php echo $heading; ?></h1>
@@ -64,7 +64,7 @@ $sections = $args['content'];
       </div>
       <?php } elseif ($layout == 'textimagevideo') { ?>
       <div class="row g-0">
-         <div class="col-md-6">
+         <div class="col-xl-6 col-lg-6">
             <div class="panel">
                <div class="my-auto text-center">
                   <h1 class="animate__animated animate__backInLeft"><?php echo $heading; ?></h1>
@@ -72,7 +72,7 @@ $sections = $args['content'];
                </div>
             </div>
          </div>
-         <div class="col-md-6">
+         <div class="col-xl-6 col-lg-6">
             <div class="panel">
                <div class="my-auto">
                   <?php if ( $video ) : ?>

@@ -1,4 +1,4 @@
-    <div class="col-lg-4">
+    <div class="col-xl-4 col-lg-4">
     <div class="post panel">  
         <div class="listing-image">
               <?php get_template_part( 'templates/partials/featured-image' ); ?>
@@ -8,7 +8,7 @@ if(in_category(6)){
 <span class="sponsored">This is Sponsored content</span>
 <?php } ?> 
             </div>
-            <div class="listing-text">
+            <div class="listing-text my-auto">
                <p> <?php $exclude = array( 6 );
 
 // The categories list.

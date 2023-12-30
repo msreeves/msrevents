@@ -1,4 +1,4 @@
-        <div class="col-lg-4">
+        <div class="col-xl-4 col-lg-4">
            <div class="panel">
            <?php 
 $link = get_field('link');

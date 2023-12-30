@@ -9,7 +9,7 @@
 
 ?>
 
-  <div class="col-lg-4">
+  <div class="col-xl-4 col-lg-4">
     <div class="panel">  
         <div class="listing-image">
             	<?php the_post_thumbnail(); ?>
@@ -19,7 +19,7 @@ if(in_category(10)){
 <span class="sponsored">This is Sponsored content</span>
 <?php } ?> 
             </div>
-            <div class="listing-text">
+            <div class="listing-text my-auto">
                <p> <?php $exclude = array( 6 );
 
 // The categories list.

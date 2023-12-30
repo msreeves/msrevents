@@ -56,13 +56,41 @@ img {
     }
 }
 
+.people {
+    .panel {
+        .listing-image {
+            img {
+                height: 70vh;
+
+                @include media(">tablet", "<=desktop") {
+                    object-fit: contain;
+                    height: 40vh;
+                }
+
+                @include media(">phone", "<=tablet") {
+                    object-fit: contain;
+                    height: 40vh;
+                }
+            }
+        }
+    }
+}
+
 .post {
     .listing-image {
         overflow: hidden;
 
         img {
-            height: 40vh;
             transition: transform .5s ease;
+
+            @include media(">tablet", "<=desktop") {
+                height: 40vh;
+                width: 320px;
+            }
+
+            @include media(">phone", "<=tablet") {
+                height: 40vh;
+            }
         }
 
         &:hover {

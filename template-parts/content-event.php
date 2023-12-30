@@ -1,12 +1,12 @@
 <div class="row g-0">
-     <div class="col-md-6"> 
+     <div class="col-xl-6 col-lg-6"> 
         <?php if ( get_field('location') ) : ?>
                                      <div class="ratio ratio-16x9">
                                  <?php echo get_field('location') ?>
                                     </div>
                                      <?php endif; ?> 
     </div>
-     <div class="col-md-6">
+     <div class="col-xl-6 col-lg-6">
         <div class="panel">
             <div class="my-auto text-center">
         			    <?php the_title( '<h1 class="entry-title">', '</h1>' );?>
@@ -31,3 +31,18 @@
 <?php if ( get_field('image_gallery') ) : ?>
     <?php get_template_part( 'inc/components/gallery' ); ?>
      <?php endif; ?>
+         <?php
+
+if ((is_single() || is_page()) && (comments_open() || get_comments_number()) && !post_password_required())
+{
+?>
+
+		<div class="comments-wrapper section-inner">
+
+			<?php comments_template(); ?>
+
+		</div><!-- .comments-wrapper -->
+
+		<?php
+}
+?>

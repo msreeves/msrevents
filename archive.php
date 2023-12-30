@@ -25,7 +25,7 @@ get_header();
 			<?php $order = get_posts( array('orderby' => 'publish_date', 'order' => 'ASC') );			
 			while ( have_posts($order) ) : ?>
 			<?php the_post(); ?>
-			 		<div class="col-lg-4 col-md-6">
+			 		<div class="col-xl-6 col-lg-6">
 			<div class="post panel">  
         <div class="listing-image"> 
             	<?php get_template_part( 'templates/partials/featured-image' ); ?>
@@ -35,7 +35,7 @@ if(in_category(6)){
 <span class="sponsored">This is Sponsored content</span>
 <?php } ?>   
             </div>
-            <div class="listing-text">
+            <div class="listing-text my-auto">
               <p>   <?php
         $terms = get_the_terms( get_the_ID(), 'category' );
 

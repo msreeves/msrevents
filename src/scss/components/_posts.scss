@@ -1,5 +1,6 @@
 article {
     background-color: $white;
+    padding: 10px;
 
         &.post {
                 .entry-content {
@@ -40,6 +41,40 @@ article {
                     line-height: 1.476;
                 }
             }
+}
+
+.post {
+    &.panel {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+        @include media(">tablet", "<=desktop") {
+            flex-direction: row;
+            margin-bottom: 0;
+        }
+
+        @include media(">phone", "<=tablet") {
+            flex-direction: column;
+        }
+
+        .listing-text {
+            padding: 20px;
+
+            @include media(">tablet", "<=desktop") {
+                padding: 0 10px;
+                width: 100%;
+            }
+        }
+    }
+}
+
+.event {
+    &.panel {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+        @include media(">phone", "<=desktop") {
+            flex-direction: column;
+        }
+    }
 }
 
 .panel {
@@ -106,4 +141,20 @@ article {
         -webkit-appearance: button;
         text-decoration: none;
         margin: 0 5px;
+}
+
+.comments-wrapper {
+    max-width: 58rem;
+    width: calc(100% - 4rem);
+    margin-left: auto;
+    margin-right: auto;
+    padding: 3rem 0;
+
+    .comment-meta {
+        display: none;
+
+        .comment-author {
+            display: none;
+        }
+    }
 }

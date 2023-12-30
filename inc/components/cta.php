@@ -15,12 +15,12 @@ $introduction = $args['introduction'];
         <div class="container">      
             <div class="panel">
             <div class="row">
-       		<div class="col-md-6">
+       		<div class="col-xl-6 col-lg-6">
              <div class="listing-image">
            <img src="<?php echo $image;?>" />
           </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-xl-6 col-lg-6">
                    <div class="panel">
           <div class="my-auto text-center">
         <h1><?php echo $heading; ?></h1>    

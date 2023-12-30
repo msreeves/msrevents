@@ -24,7 +24,7 @@ $columns = $args['keypoint'];
           <img src="<?php echo $icon; ?>" alt="" />
            </div>
         </div>
-        <div class="listing-text">
+        <div class="listing-text my-auto">
            <?php if ( $number ) : ?>
         <h1 class="count"> <?php echo $number; ?></h1>
         <?php endif; ?>
