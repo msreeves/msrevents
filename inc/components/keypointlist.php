@@ -17,18 +17,18 @@ $columns = $args['keypoint'];
        $icon = $column['icon'];
        $number = $column['number'];
        $introduction = $column['introduction']; ?>
-       <div class="col-lg-3 mx-auto">
-        <div class="panel">
+       <div class="col-xl-3 mx-auto">
+        <div class="post panel">
         <div class="listing-image">
           <div class="icon">
           <img src="<?php echo $icon; ?>" alt="" />
            </div>
         </div>
-        <div class="listing-text my-auto">
+        <div class="listing-text text-center my-auto">
            <?php if ( $number ) : ?>
         <h1 class="count"> <?php echo $number; ?></h1>
         <?php endif; ?>
-        <h3 class="text-center"><?php echo $heading; ?></h3>		
+        <h3><?php echo $heading; ?></h3>		
           <p><?php echo $introduction; ?></p>
            </div>
      </div>
