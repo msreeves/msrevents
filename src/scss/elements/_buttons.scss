@@ -50,6 +50,21 @@
           }
     }
 
+         .ctas {
+             display: flex;
+             justify-content: space-around;
+             justify-content: center;
+    
+             @include media(">phone", "<=tablet") {
+                 display: block;
+             }
+    
+             button {
+                 margin: 0.25rem;
+                 width: 100%;
+             }
+         }
+
 input[type="button"] {
     background: $primary;
     border: none;

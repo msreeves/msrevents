@@ -25,7 +25,7 @@ $introduction = $args['introduction'];
           <div class="my-auto text-center">
         <h1><?php echo $heading; ?></h1>    
 				<p><?php echo $introduction; ?></p>
-<div class="d-flex justify-content-center">
+<div class="ctas">
                       <?php 
 $link = $args['link1'];
 if( $link ): 
