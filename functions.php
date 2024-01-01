@@ -168,3 +168,15 @@ function post_per_page_control( $query ) {
   function wpse_custom_excerpts($limit) {
     return wp_trim_words(get_the_excerpt(), $limit, '[...]');
 }
+
+add_filter('get_the_terms', function ($terms, $post_id, $taxonomy) {
+    $exclude_categories = array(6);
+    if (!is_admin()) {
+        foreach($terms as $key => $term){
+            if($term->taxonomy == "category" && in_array($term->term_id, $exclude_categories)) {
+                unset($terms[$key]);
+            }
+        }
+    }
+    return $terms;
+}, 100, 3);

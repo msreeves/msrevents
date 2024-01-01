@@ -23,7 +23,6 @@ $type = $args['type'];
       $latests = new WP_Query(array(
       	'post_type' => 'post',
       	'posts_per_page' => 3,
-         'category__not_in' => array( 6 ),
       	'paged' => $paged,
          'tax_query' => array(
             array(

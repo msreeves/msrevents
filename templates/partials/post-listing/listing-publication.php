@@ -9,10 +9,12 @@ $link = get_field('link');
          </div>
         <div class="col-lg-8">
            <div class="panel">
-            <div class="my-auto">
-             <h2><?php the_title(); ?></h1>	
+            <div class="my-auto text-center">
+             <h2><?php the_title(); ?></h2>	
              <p> <?php the_field('summary'); ?></p>
+             <div class="ctas"
               <a href="<?php echo esc_url( $link_url ); ?>" target="_blank"><button>Read more</button></a>
+      </div>
                </div>
              </div>
          </div>

@@ -412,7 +412,7 @@ article .entry-content p {
 .panel span {
   background-color: #6082B6;
   color: #fff;
-  margin: 0 5px 0 0;
+  margin: 0 5px 10px 0;
   padding: 0 5px;
   font-size: 18px;
   display: inline-block;
@@ -495,8 +495,8 @@ span {
 }
 span.sponsored {
   text-transform: uppercase;
-  text-align: center;
-  width: 100%;
+  margin-bottom: 1.2rem;
+  font-size: 1rem;
 }
 
 button {
