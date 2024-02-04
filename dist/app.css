@@ -1073,14 +1073,18 @@ img {
   width: 100%;
 }
 
-.listing-image .icon {
+.icon {
   text-align: center;
 }
-.listing-image .icon img {
+.icon img {
+  margin: 0;
+  overflow: hidden;
+  width: 100%;
   -o-object-fit: contain;
      object-fit: contain;
   height: 10vh;
 }
+
 .listing-image img {
   margin: 0;
   -o-object-fit: cover;

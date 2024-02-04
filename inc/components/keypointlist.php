@@ -19,16 +19,14 @@ $columns = $args['keypoint'];
        $introduction = $column['introduction']; ?>
        <div class="col-xl-3 mx-auto">
         <div class="post panel">
-        <div class="listing-image">
           <div class="icon">
           <img src="<?php echo $icon; ?>" alt="" />
            </div>
-        </div>
-        <div class="listing-text text-center my-auto">
+        <div class="listing-text text-center">
            <?php if ( $number ) : ?>
-        <h1 class="count"> <?php echo $number; ?></h1>
+        <h2 class="count"> <?php echo $number; ?></h2>
         <?php endif; ?>
-        <h3><?php echo $heading; ?></h3>		
+        <h2><?php echo $heading; ?></h2>		
           <p><?php echo $introduction; ?></p>
            </div>
      </div>

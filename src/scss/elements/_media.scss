@@ -21,16 +21,20 @@ img {
     }
 }
 
+  .icon {
+      text-align: center;
+
+      img {
+          margin: 0;
+          overflow: hidden;
+          width: 100%;
+          object-fit: contain;
+          height: 10vh;
+      }
+
+  }
+
 .listing-image {
-    .icon {
-        text-align: center;
-
-        img {
-            object-fit: contain;
-            height: 10vh;
-        }
-    }
-
     img {
         margin: 0;
             object-fit: cover;
