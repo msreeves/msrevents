@@ -1,0 +1,25 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Theme: watch (Mix)",
+      "type": "shell",
+      "command": "npm run watch",
+      "group": "build",
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "env": {}
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "focus": false,
+        "clear": false
+      },
+      "problemMatcher": [],
+      "runOptions": {
+        "runOn": "folderOpen"
+      }
+    }
+  ]
+}
