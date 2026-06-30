@@ -1,0 +1,328 @@
+header {
+    .navbar {
+        background-color: $bg-dark;
+        border-bottom: 1px solid $border-mid;
+
+        > .container-fluid {
+            @include media('>tablet') {
+                align-items: center;
+            }
+        }
+
+        .navbar-brand {
+            max-width: 140px;
+        }
+
+        .navbar-nav {
+            height: auto;
+            align-items: center;
+
+            @include media(">phone", "<desktop") {
+                height: auto;
+            }
+
+            #cssmenu {
+                line-height: 1;
+                display: block;
+                padding: 0;
+                margin: 0;
+                width: auto;
+
+                ul {
+                    line-height: 1;
+
+                    li.has-sub {
+                        &:hover {
+                            >a {
+                                &:after {
+                                    display: none;
+                                }
+
+                                background: $surface-mid;
+                                border-color: $surface-mid;
+                                padding-bottom: 13px;
+                                padding-top: 13px;
+                                top: -1px;
+                                z-index: 999;
+                            }
+
+                            >ul {
+                                display: block;
+                            }
+
+                            >div {
+                                display: block;
+                            }
+                        }
+
+                        >a {
+                            &:hover {
+                                background: $surface-mid;
+                                border-color: $gold;
+                            }
+                        }
+                    }
+
+                    li {
+                        >ul {
+                            display: none;
+                            width: auto;
+                            position: absolute;
+                            top: 50px;
+                            padding: 10px 0;
+                            background: $surface;
+                            border: 1px solid $border-mid;
+                            border-top: 2px solid $gold;
+                            border-radius: 0 0 4px 4px;
+                            z-index: 999;
+                            width: 200px;
+
+                            @include media(">phone", "<desktop") {
+                                display: block;
+                                width: 100%;
+                                position: relative;
+                                top: 0;
+                            }
+
+                            &:hover {
+                                background: $surface-mid;
+
+                                @include media(">phone", "<desktop") {
+                                    background: $surface;
+                                }
+                            }
+
+                            li {
+                                display: block;
+                                list-style: inside none;
+                                padding: 10px 0;
+                                margin: 0;
+                                position: relative;
+
+                                a {
+                                    outline: none;
+                                    display: block;
+                                    position: relative;
+                                    margin: 0;
+                                    padding: 8px 20px;
+                                }
+                            }
+                        }
+
+                        >div {
+                            display: none;
+                            width: auto;
+                            position: absolute;
+                            top: 50px;
+                            padding: 10px 0;
+                            background: $surface;
+                            border: 1px solid $border-mid;
+                            border-top: 2px solid $gold;
+                            border-radius: 0 0 4px 4px;
+                            z-index: 999;
+                        }
+                    }
+                }
+
+                li {
+                    line-height: 1;
+                }
+
+                a {
+                    line-height: 1;
+                }
+
+                >ul {
+                    list-style: inside none;
+                    padding: 0;
+                    margin: 0;
+
+                    >li {
+                        margin: 0;
+                        display: block;
+                        position: relative;
+
+                        @include media(">phone", "<desktop") {
+                            display: block;
+                            width: 100%;
+                            position: relative;
+                            top: 0;
+                            background-color: $surface;
+                            border-bottom: 1px solid $border-mid;
+                        }
+
+                        >a {
+                            outline: none;
+                            display: block;
+                            position: relative;
+                            padding: 0.5rem 0.75rem;
+                            text-align: center;
+                        }
+
+                        &:first-child {
+                            >a {
+                                border-radius: 5px 0 0 5px;
+                            }
+                        }
+                    }
+
+                    >li.has-sub {
+                        &:hover {
+                            >a {
+                                &:before {
+                                    top: 19px;
+                                }
+                            }
+                        }
+
+                        ul {
+                            span {
+                                @include media(">phone", "<desktop") {
+                                    font-size: 1.2rem;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            ul {
+                list-style: none;
+                display: flex;
+                justify-content: space-between;
+                margin: 0;
+
+                @include media(">phone", "<desktop") {
+                    display: block;
+                }
+
+                a {
+                    font-family: $header-text;
+                    font-size: 1.6rem;
+                    letter-spacing: 0.04em;
+                    text-decoration: none;
+                    color: $text-primary;
+                    font-weight: 800;
+                    position: relative;
+
+                    &::after {
+                        position: absolute;
+                        bottom: -4px;
+                        left: 0;
+                        content: '';
+                        width: 100%;
+                        height: 2px;
+                        background: $gold;
+                        transform: scale(0, 1);
+                        transform-origin: right top;
+                        transition: transform .3s;
+
+                        @include media(">phone", "<desktop") {
+                            background: none;
+                        }
+                    }
+
+                    &:hover {
+                        color: $gold-light;
+
+                        &::after {
+                            transform-origin: left top;
+                            transform: scale(1, 1);
+                        }
+                    }
+                }
+
+                li {
+                    margin: 0 10px;
+
+                    @include media(">phone", "<desktop") {
+                        padding: 1rem;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+
+        .nav-tabs {
+            border: 0;
+            justify-content: center;
+            padding: 10px 0;
+
+            li {
+                margin: 0.5rem 0 0 2rem;
+            }
+        }
+
+        ul.nav-tabs {
+            margin: 0;
+        }
+
+        // Hamburger icon bars — visible on dark navbar background
+        .navbar-toggler {
+            span {
+                display: block;
+                background-color: $text-primary;
+                height: 3px;
+                width: 25px;
+                margin-top: 5px;
+                margin-bottom: 5px;
+                position: relative;
+                left: 0;
+                opacity: 1;
+                transition: all 0.35s ease-out;
+                transform-origin: center left;
+
+                &:nth-child(1) {
+                    transform: translate(0%, 0%) rotate(0deg);
+                    margin-top: 0.3em;
+                }
+
+                &:nth-child(2) {
+                    opacity: 1;
+                }
+
+                &:nth-child(3) {
+                    transform: translate(0%, 0%) rotate(0deg);
+                }
+            }
+
+            &:not(.collapsed) {
+                span {
+                    &:nth-child(1) {
+                        transform: translate(15%, -33%) rotate(45deg);
+                    }
+
+                    &:nth-child(2) {
+                        opacity: 0;
+                    }
+
+                    &:nth-child(3) {
+                        transform: translate(15%, 33%) rotate(-45deg);
+                    }
+                }
+            }
+        }
+    }
+
+    .msr-events-mobile-nav {
+        background-color: $bg-dark;
+        border-left: 1px solid $border-mid;
+        color: $text-primary;
+
+        .offcanvas-header {
+            border-bottom: 1px solid $border-mid;
+        }
+
+        .offcanvas-title {
+            color: $text-primary;
+            font-family: $header-text;
+            letter-spacing: 0.04em;
+        }
+
+        @include media('>=desktop') {
+            .offcanvas-body {
+                padding: 0;
+            }
+        }
+    }
+}

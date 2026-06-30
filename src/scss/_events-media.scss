@@ -1,0 +1,72 @@
+// Card + single image system (consistent aspect ratios)
+.msr-card-media {
+	display: block;
+	overflow: hidden;
+	background: $surface-mid;
+	aspect-ratio: 16 / 10;
+	max-height: 14rem;
+
+	&__img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center;
+		display: block;
+		margin: 0;
+	}
+}
+
+.msr-single-media {
+	margin-bottom: 1.5rem;
+
+	&__frame {
+		overflow: hidden;
+		border-radius: 2px;
+		background: $surface-mid;
+		max-height: min(28rem, 52vw);
+		aspect-ratio: 3 / 4;
+	}
+
+	&__img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center top;
+		display: block;
+		margin: 0;
+	}
+
+	&__caption {
+		margin: 0.5rem 0 0;
+	}
+}
+
+.post-card {
+	height: 100%;
+
+	.panel {
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.msr-card-media {
+		border-radius: 2px 2px 0 0;
+		flex-shrink: 0;
+	}
+
+	&__body {
+		flex: 1 1 auto;
+		display: flex;
+		flex-direction: column;
+		padding-top: 1rem;
+	}
+}
+
+body.msr-events {
+	.post.panel .listing-image:not(:has(.msr-card-media)) img {
+		max-height: 14rem;
+		width: 100%;
+		object-fit: cover;
+	}
+}

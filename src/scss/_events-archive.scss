@@ -1,0 +1,108 @@
+// Our Events archive — hero + listing cards
+.events-archive-page {
+	&__hero {
+		background: linear-gradient(160deg, rgba($accent, 0.12) 0%, $surface-mid 55%, $bg-dark 100%);
+		border: 1px solid $border-mid;
+		border-radius: $border-radius-lg;
+		padding: 2rem 1.5rem;
+		margin-bottom: 1.5rem;
+	}
+
+	&__title {
+		font-family: $header-text;
+		color: $text-primary;
+		margin-bottom: 0.75rem;
+	}
+
+	&__lead {
+		color: $text-secondary;
+		max-width: 40rem;
+	}
+}
+
+.events-archive-listing--events {
+	margin-top: 1.5rem;
+}
+
+.event-listing-card {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+
+	&__body {
+		display: flex;
+		flex-direction: column;
+		flex: 1 1 auto;
+		padding: 1.25rem 1.25rem 1.5rem;
+	}
+
+	&__meta {
+		.events-event-meta-chips {
+			justify-content: flex-start;
+			margin-bottom: 0.75rem;
+		}
+
+		.events-lifecycle-badge {
+			margin-bottom: 0.75rem;
+		}
+	}
+
+	&__title {
+		font-family: $header-text;
+		color: $text-primary;
+		margin-bottom: 0.5rem;
+
+		a {
+			display: inline-flex;
+			align-items: center;
+			min-height: 2.75rem;
+			padding-block: 0.35rem;
+			color: inherit;
+			text-decoration: none;
+
+			&:hover,
+			&:focus-visible {
+				color: $accent-light;
+			}
+		}
+	}
+
+	&__schedule {
+		color: $text-secondary;
+	}
+
+	&__teaser {
+		color: $text-primary;
+		flex: 1 1 auto;
+	}
+
+	.msr-card-media {
+		border-radius: 2px 2px 0 0;
+		flex-shrink: 0;
+	}
+
+	.btn {
+		margin-top: auto;
+		align-self: flex-start;
+	}
+}
+
+.msr-card-media--placeholder {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: linear-gradient(145deg, $surface-mid 0%, rgba($accent, 0.08) 100%);
+}
+
+.msr-card-media__placeholder-icon {
+	color: $accent-light;
+	font-size: 2rem;
+	opacity: 0.85;
+}
+
+@include media('<=tablet') {
+	.events-archive-page__hero {
+		padding: 1.5rem 1.25rem;
+	}
+}

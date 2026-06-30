@@ -1,0 +1,118 @@
+// Podcast archive — show groups + episode grid
+.podcast-show {
+	background: $surface-mid;
+	border: 1px solid $border-mid;
+	border-radius: $border-radius-lg;
+	padding: 1.75rem 1.5rem;
+	margin-bottom: 1.5rem;
+
+	&__header {
+		margin-bottom: 1.5rem;
+		padding-bottom: 1.25rem;
+		border-bottom: 1px solid $border-mid;
+	}
+
+	&__brand {
+		display: flex;
+		align-items: flex-start;
+		gap: 1.25rem;
+	}
+
+	&__thumb {
+		flex-shrink: 0;
+		width: 5.5rem;
+		height: 5.5rem;
+		border-radius: $border-radius-lg;
+		overflow: hidden;
+		background: $bg-dark;
+		border: 1px solid $border-mid;
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			display: block;
+		}
+
+		&--placeholder {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: $accent-light;
+			font-size: 1.75rem;
+			background: linear-gradient(145deg, $surface-mid 0%, rgba($accent, 0.12) 100%);
+		}
+	}
+
+	&__title {
+		font-family: $header-text;
+		color: $text-primary;
+	}
+
+	&__description {
+		color: $text-secondary;
+		font-size: 0.95rem;
+	}
+}
+
+.podcast-episode-card {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	padding: 1.25rem 1.25rem 1.5rem;
+
+	&__show {
+		color: $accent-light;
+		font-family: $header-text;
+		font-weight: 600;
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
+	}
+
+	&__badges {
+		color: $text-secondary;
+		margin: 0;
+	}
+
+	&__title {
+		font-family: $header-text;
+		color: $text-primary;
+	}
+
+	&__summary {
+		color: $text-primary;
+		font-size: 0.95rem;
+		flex: 1 1 auto;
+
+		p:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&__player {
+		margin-top: auto;
+		padding-top: 0.75rem;
+	}
+
+	&__audio {
+		width: 100%;
+		min-height: 2.75rem;
+		border-radius: $border-radius;
+	}
+}
+
+.events-podcasts-grid {
+	margin-top: 0.25rem;
+}
+
+@include media('<=tablet') {
+	.podcast-show {
+		padding: 1.25rem 1rem;
+
+		&__brand {
+			flex-direction: column;
+			align-items: center;
+			text-align: center;
+		}
+	}
+}

@@ -1,0 +1,127 @@
+// P17-style responsive UX — tap targets, filter pills, section rhythm (laptop / tablet / mobile)
+
+// Filter pills: short labels (A–Z, All) must meet 44×44px
+.msr-filter-bar,
+.events-filter-bar {
+	&__link,
+	&__tab {
+		min-width: 2.75rem;
+		justify-content: center;
+		padding-inline: 0.65rem;
+	}
+}
+
+@include media('<=tablet') {
+	header .navbar-toggler,
+	.events-header-search__toggle {
+		box-sizing: border-box;
+		width: 2.75rem;
+		height: 2.75rem;
+		min-width: 2.75rem;
+		min-height: 2.75rem;
+		padding: 0.5rem;
+		line-height: 1;
+	}
+
+	.events-featured-events {
+		padding: 2rem 0;
+
+		&__card {
+			padding: 1rem 1.15rem;
+		}
+
+		&__card-link {
+			display: flex;
+			align-items: center;
+			min-height: 2.75rem;
+			padding-block: 0.35rem;
+		}
+
+		&__item {
+			border-radius: $border-radius-lg;
+		}
+	}
+
+	.events-archive-filters {
+		padding: 1rem 1rem 0.25rem;
+		background: rgba($surface-mid, 0.65);
+		border: 1px solid $border-mid;
+		border-radius: $border-radius-lg;
+		margin-bottom: 1.25rem;
+
+		.events-filter-bar__list {
+			padding-bottom: 0.75rem;
+		}
+	}
+
+	.events-archive-page__hero,
+	.events-publications-page__hero,
+	.events-publications__header {
+		padding: 1.5rem 1.15rem;
+	}
+
+	.events-keypoints {
+		margin: 1.5rem 0;
+	}
+
+	.events-publications,
+	.events-podcasts-hero,
+	.podcast-show {
+		margin-bottom: 1.25rem;
+	}
+
+	.event-listing-card {
+		&__title a {
+			display: inline-flex;
+			align-items: center;
+			min-height: 2.75rem;
+		}
+	}
+
+	.msr-empty-state__links .btn {
+		min-height: 2.75rem;
+	}
+}
+
+@include media('<=phone') {
+	body.msr-events section:not(#advert) {
+		padding-top: calc(var(--msr-section-y, 5rem) * 0.45);
+		padding-bottom: calc(var(--msr-section-y, 5rem) * 0.45);
+	}
+
+	.events-programme-stats__list {
+		gap: 0.75rem;
+	}
+
+	.events-featured-events__grid {
+		gap: 0.75rem;
+	}
+
+	.events-archive-filters__heading {
+		font-size: 0.72rem;
+	}
+
+	.events-publications-grid,
+	.events-podcasts-grid,
+	.msr-card-grid {
+		--bs-gutter-y: 0.75rem;
+	}
+}
+
+// Privacy + thin-route inline nav links
+.awards-privacy-page {
+	&__links {
+		margin-top: 1rem;
+
+		.btn {
+			min-height: 2.75rem;
+		}
+	}
+
+	&__demo a:not(.btn) {
+		display: inline-flex;
+		align-items: center;
+		min-height: 2.75rem;
+		padding-inline: 0.25rem;
+	}
+}

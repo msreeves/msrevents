@@ -1,0 +1,88 @@
+{
+    "ID": 74,
+    "key": "group_63315a8839ee1",
+    "title": "Partners",
+    "fields": [
+        {
+            "ID": 75,
+            "key": "field_63315a88c835b",
+            "label": "Link",
+            "name": "link",
+            "aria-label": "",
+            "prefix": "acf",
+            "type": "link",
+            "value": null,
+            "menu_order": 0,
+            "instructions": "",
+            "required": 0,
+            "id": "",
+            "class": "",
+            "conditional_logic": 0,
+            "parent": 74,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "_name": "link",
+            "_valid": 1
+        },
+        {
+            "ID": 0,
+            "key": "field_msrevents_partner_tier",
+            "label": "Sponsor tier",
+            "name": "sponsor_tier",
+            "aria-label": "",
+            "prefix": "acf",
+            "type": "select",
+            "value": null,
+            "menu_order": 1,
+            "instructions": "Groups partners on sponsor listings (main → supporter).",
+            "required": 0,
+            "id": "",
+            "class": "",
+            "conditional_logic": 0,
+            "parent": 74,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "main": "Main sponsor",
+                "gold": "Gold partner",
+                "silver": "Silver partner",
+                "supporter": "Supporter"
+            },
+            "default_value": "supporter",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 1,
+            "ajax": 0,
+            "placeholder": "",
+            "_name": "sponsor_tier",
+            "_valid": 1
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "partner"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "_valid": true
+}

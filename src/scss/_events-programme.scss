@@ -1,0 +1,141 @@
+// Programme lifecycle timeline surfaces
+.events-programme-timeline {
+	background: $surface;
+	border-top: 1px solid $border-mid;
+	border-bottom: 1px solid $border-mid;
+	padding: 2.5rem 0;
+
+	&__title {
+		font-family: $display-text;
+		color: $text-primary;
+	}
+
+	&__status {
+		color: $primary-light;
+		font-weight: 600;
+	}
+
+	&__list {
+		display: grid;
+		gap: 1rem;
+
+		@include media('>=tablet') {
+			grid-template-columns: repeat(4, minmax(0, 1fr));
+		}
+	}
+
+	&__item {
+		background: $surface-mid;
+		border: 1px solid $border-mid;
+		border-radius: 2px;
+		padding: 1rem;
+		position: relative;
+
+		&.is-active {
+			border-color: rgba($primary, 0.65);
+			box-shadow: 0 0 0 1px rgba($primary, 0.25);
+		}
+	}
+
+	&__marker {
+		width: 0.5rem;
+		height: 0.5rem;
+		border-radius: 50%;
+		background: $text-muted;
+		margin-bottom: 0.75rem;
+	}
+
+	&__item.is-active &__marker {
+		background: $primary;
+		box-shadow: 0 0 0 4px rgba($primary, 0.2);
+	}
+
+	&__label {
+		color: $text-primary;
+		font-family: $header-text;
+	}
+
+	&__copy {
+		color: $text-secondary;
+	}
+}
+
+@include media('<=phone') {
+	.events-programme-timeline {
+		padding: 2rem 0;
+	}
+}
+
+// Compact lifecycle band (archive + singles context)
+.events-lifecycle-band {
+	background: rgba($surface-mid, 0.85);
+	border: 1px solid rgba($primary, 0.22);
+	border-radius: 2px;
+	padding: 1.25rem 1.5rem;
+	margin-bottom: 2rem;
+
+	&__eyebrow {
+		font-size: 0.75rem;
+		font-weight: 600;
+		letter-spacing: 0.06em;
+		text-transform: uppercase;
+		color: $text-primary;
+		margin-bottom: 0.35rem;
+	}
+
+	&__status {
+		font-family: $header-text;
+		font-weight: 600;
+		color: $text-primary;
+		margin-bottom: 0.5rem;
+	}
+
+	&__copy {
+		color: $text-primary;
+		font-size: 0.95rem;
+		max-width: 52rem;
+		opacity: 0.92;
+	}
+}
+
+.events-lifecycle-badge {
+	display: inline-flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	gap: 0.35rem;
+	margin: 0.5rem 0 0.75rem;
+	padding: 0.35rem 0.75rem;
+	border-radius: 2px;
+	border: 1px solid rgba($primary, 0.45);
+	background: rgba($surface-high, 0.95);
+	font-size: 0.875rem;
+	line-height: 1.35;
+
+	&__prefix {
+		color: $text-primary;
+		font-weight: 500;
+		opacity: 0.9;
+	}
+
+	&__label {
+		color: $text-primary;
+		font-weight: 700;
+	}
+
+	&--live {
+		border-color: rgba($primary, 0.55);
+	}
+
+	&--registration {
+		border-color: rgba($accent, 0.45);
+	}
+}
+
+.events-lifecycle-single__copy {
+	color: $text-primary;
+	font-size: 0.95rem;
+	max-width: 36rem;
+	margin: 0 auto 1rem;
+	opacity: 0.92;
+}

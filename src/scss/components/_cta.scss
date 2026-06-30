@@ -1,0 +1,52 @@
+.cta {
+	background-color: $surface;
+	border-top: 1px solid $border-mid;
+	border-bottom: 1px solid $border-mid;
+
+	.events-cta-panel {
+		background-color: $surface-mid;
+		border-top: 2px solid $gold;
+		padding: clamp(1.5rem, 3vw, 2.5rem);
+	}
+
+	.events-cta-panel__media {
+		border-radius: 4px;
+		overflow: hidden;
+		background: $surface;
+		border: 1px solid $border-mid;
+	}
+
+	.events-cta-panel__img {
+		display: block;
+		width: 100%;
+		height: auto;
+		max-height: 22rem;
+		object-fit: cover;
+		margin: 0;
+	}
+
+	&--no-media .events-cta-panel__body {
+		max-width: 40rem;
+		margin-inline: auto;
+	}
+}
+
+#advert {
+	background-color: $surface;
+	border-top: 1px solid $border-mid;
+	border-bottom: 1px solid $border-mid;
+
+	.events-advert-panel {
+		background-color: $surface-mid;
+		border-top: 2px solid $gold;
+		padding: clamp(1.25rem, 2.5vw, 2rem);
+	}
+
+	.events-advert__label {
+		color: $text-secondary;
+		font-size: 0.85rem;
+		font-weight: 600;
+		letter-spacing: 0.06em;
+		text-transform: uppercase;
+	}
+}

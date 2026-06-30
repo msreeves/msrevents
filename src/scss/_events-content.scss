@@ -1,0 +1,184 @@
+// Empty states + post card typography
+
+.msr-empty-state {
+	color: $text-secondary;
+
+	&__title {
+		color: $text-primary;
+		font-family: $header-text;
+	}
+
+	&__message {
+		color: $text-secondary;
+	}
+
+	&--inline {
+		padding: 1.25rem 0;
+		text-align: center;
+	}
+}
+
+.post-card {
+	&__title {
+		color: $white;
+		font-family: $header-text;
+	}
+
+	&__excerpt {
+		color: $text-primary;
+	}
+}
+
+.msr-card-grid {
+	align-items: stretch;
+
+	> [class*='col-'] {
+		display: flex;
+	}
+
+	.post-card,
+	.event-listing-card,
+	.podcast-episode-card,
+	.publication-card,
+	.nominee-card,
+	.publication-card,
+	.partner-card {
+		width: 100%;
+		flex: 1 1 auto;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.post-card__body,
+	.event-listing-card__body,
+	.nominee-card__body,
+	.publication-card__body {
+		display: flex;
+		flex-direction: column;
+		flex: 1 1 auto;
+
+		.btn {
+			margin-top: auto;
+			align-self: flex-start;
+		}
+	}
+}
+
+.events-archive-listing {
+	.msr-site-search {
+		padding: 1.5rem 0 !important;
+		margin-top: 0.5rem;
+	}
+
+	.msr-filter-tabs {
+		margin-top: 0.25rem;
+	}
+}
+
+.events-topic-chip {
+	text-decoration: none;
+
+	span {
+		background-color: $accent;
+		color: $white;
+		border: 1px solid $accent-light;
+		margin: 0 5px 10px 0;
+		padding: 0.2rem 0.55rem;
+		font-size: 0.8rem;
+		font-weight: 700;
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
+		display: inline-block;
+	}
+
+	&:hover span,
+	&:focus-visible span {
+		background-color: $accent-light;
+		color: $bg-dark;
+		border-color: $accent-light;
+	}
+}
+
+.panel .listing-text a.events-topic-chip:hover span,
+.panel .listing-text a.events-topic-chip:focus-visible span {
+	background-color: $accent-light;
+	color: $bg-dark;
+	border-color: $accent-light;
+}
+
+// Phase 18 — planner journey + sponsor tiers
+
+.events-planner-journey {
+	margin: 2rem 0 2.5rem;
+
+	&__title {
+		font-family: $display-text;
+		color: $text-primary;
+	}
+
+	&__lead {
+		color: $text-secondary;
+		max-width: 42rem;
+		margin-inline: auto;
+	}
+
+	&__steps {
+		display: grid;
+		gap: 1rem;
+
+		@include media('>=tablet') {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+	}
+
+	&__step {
+		height: 100%;
+		padding: 1.25rem;
+	}
+
+	&__step-label {
+		color: $accent-light;
+		letter-spacing: 0.08em;
+	}
+
+	&__step-title {
+		color: $text-primary;
+		font-family: $header-text;
+	}
+
+	&__step-copy {
+		color: $text-secondary;
+	}
+}
+
+.events-partner-tier {
+	margin-bottom: 2rem;
+
+	&__heading {
+		color: $accent-light;
+		letter-spacing: 0.06em;
+		margin-bottom: 1rem;
+	}
+}
+
+.partner-card__tier-badge {
+	padding: 0.2rem 0.55rem;
+	border: 1px solid $border-mid;
+	border-radius: 999px;
+	color: $text-secondary;
+	font-size: 0.75rem;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+}
+
+.nominee-card__terms span {
+	padding: 0.2rem 0.55rem;
+	border: 1px solid $border-mid;
+	border-radius: 999px;
+	color: $text-secondary;
+	font-size: 0.75rem;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+	display: inline-block;
+	margin: 0 0.25rem 0.5rem;
+}

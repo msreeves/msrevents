@@ -1,0 +1,208 @@
+button {
+    background: $gold;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 2px;
+    color: $text-primary;
+    display: inline-block;
+    letter-spacing: 0.08em;
+    line-height: 1.25;
+    padding: 1rem 1.5rem;
+    text-align: center;
+    transition: background 0.25s ease, transform 0.2s ease;
+    font-family: $header-text;
+    font-weight: 700;
+    margin: 0;
+    overflow: visible;
+    -webkit-appearance: button;
+    cursor: pointer;
+
+    &.secondary {
+        background: $surface-mid;
+        color: $text-primary;
+        border: 1px solid $gold;
+
+        &:hover {
+            background: $surface-high;
+            color: $gold-light;
+            border-color: $gold-light;
+        }
+    }
+
+    &:hover {
+        background: $gold-light;
+        color: $text-primary;
+        transform: translateY(-1px);
+    }
+
+    &:active {
+        background: $gold-dark;
+        color: $text-primary;
+        transform: translateY(0);
+    }
+
+    &:focus {
+        outline: 2px solid $gold;
+        outline-offset: 2px;
+    }
+
+    &::-moz-focus-inner {
+        border-style: none;
+        padding: 0;
+    }
+
+    &:-moz-focusring {
+        outline: 1px dotted ButtonText;
+    }
+
+    a {
+        &.btn-load-more {
+            color: $text-primary;
+            text-decoration: none;
+        }
+    }
+}
+
+.ctas {
+    display: flex;
+    justify-content: center;
+
+    @include media(">phone", "<=tablet") {
+        display: block;
+    }
+
+    button {
+        margin: 0.25rem;
+        width: 100%;
+    }
+}
+
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+    background: $gold;
+    border: none;
+    border-radius: 2px;
+    color: $text-primary;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    line-height: 1.25;
+    padding: 1rem 1.5rem;
+    text-align: center;
+    text-transform: uppercase;
+    transition: background 0.25s ease, transform 0.2s ease;
+    font-family: $header-text;
+    font-weight: 700;
+
+    &:hover {
+        background: $gold-light;
+        color: $text-primary;
+        transform: translateY(-1px);
+    }
+
+    &:active {
+        background: $gold-dark;
+        color: $text-primary;
+        transform: translateY(0);
+    }
+
+    &:focus {
+        outline: 2px solid $gold;
+        outline-offset: 2px;
+    }
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"] {
+    &:focus {
+        color: $text-primary;
+    }
+}
+
+input {
+    font-family: inherit;
+    font-size: 100%;
+    line-height: 1.15;
+    margin: 0;
+    overflow: visible;
+}
+
+optgroup, select {
+    font-family: inherit;
+    font-size: 100%;
+    line-height: 1.15;
+    margin: 0;
+}
+
+select {
+    text-transform: none;
+}
+
+[type="button"],
+[type="reset"],
+[type="submit"] {
+    -webkit-appearance: button;
+
+    &::-moz-focus-inner {
+        border-style: none;
+        padding: 0;
+    }
+
+    &:-moz-focusring {
+        outline: 1px dotted ButtonText;
+    }
+}
+
+.btn {
+    font-family: $header-text;
+    letter-spacing: 0.06em;
+}
+
+.btn-primary {
+    background-color: $gold;
+    border-color: $gold;
+    color: $white;
+    font-weight: 700;
+
+    &:hover,
+    &:focus,
+    &:focus-visible {
+        background-color: $gold-light;
+        border-color: $gold-light;
+        color: $white;
+    }
+
+    &:active {
+        background-color: $gold-dark;
+        border-color: $gold-dark;
+        color: $white;
+    }
+}
+
+.btn-outline-primary {
+    color: $text-primary;
+    border-color: $gold-light;
+
+    &:hover,
+    &:focus,
+    &:focus-visible {
+        background-color: $gold;
+        border-color: $gold;
+        color: $text-primary;
+    }
+}

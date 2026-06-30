@@ -1,0 +1,54 @@
+// Hub layout — prevent horizontal overflow on mobile; contain carousels/media
+html {
+	overflow-x: clip;
+}
+
+body.msr-event-context--hub {
+	overflow-x: clip;
+	max-width: 100vw;
+}
+
+#site-content,
+.site-main,
+.msr-hero-carousel {
+	max-width: 100%;
+	overflow-x: clip;
+}
+
+.msr-hero-carousel {
+	.background-image,
+	.msr-hero-carousel__bg {
+		background-size: cover;
+		background-position: center;
+		width: 100%;
+		min-height: min(72vh, 40rem);
+	}
+
+	.listing-video iframe,
+	.listing-image img {
+		max-width: 100%;
+		height: auto;
+	}
+}
+
+.msr-stories-list__empty,
+.msr-events-listing__empty,
+.msr-load-more-status {
+	color: $text-secondary;
+	padding: 1.5rem 0;
+}
+
+.msr-site-search .input-group {
+	max-width: 100%;
+}
+
+@include media('<=phone') {
+	.navbar .container-fluid {
+		padding-left: 1rem;
+		padding-right: 1rem;
+	}
+
+	.carousel-hero-title {
+		font-size: clamp(1.25rem, 5vw, 2rem);
+	}
+}

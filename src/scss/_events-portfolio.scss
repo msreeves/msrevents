@@ -1,0 +1,161 @@
+// Portfolio demonstration — stats strip, featured events, CTA preview
+
+.events-programme-stats {
+	padding: 1.75rem 0;
+	background: linear-gradient(180deg, rgba($surface-high, 0.55) 0%, $surface 100%);
+	border-bottom: 1px solid $border-mid;
+
+	&__list {
+		display: grid;
+		gap: 1rem;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+
+		@include media('>=tablet') {
+			grid-template-columns: repeat(4, minmax(0, 1fr));
+		}
+	}
+
+	&__item {
+		text-align: center;
+		padding: 1rem 0.75rem;
+		background: rgba($surface-mid, 0.85);
+		border: 1px solid rgba($accent, 0.22);
+		border-radius: 2px;
+	}
+
+	&__value {
+		font-family: $display-text;
+		font-size: clamp(1.75rem, 4vw, 2.25rem);
+		font-weight: 700;
+		line-height: 1.1;
+		color: $text-primary;
+	}
+
+	&__label {
+		margin-top: 0.35rem;
+		font-size: 0.8125rem;
+		font-weight: 600;
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
+		color: $text-secondary;
+	}
+}
+
+.events-featured-events {
+	padding: 2.5rem 0;
+	background: $surface;
+
+	&__title {
+		font-family: $display-text;
+		color: $text-primary;
+	}
+
+	&__lead {
+		color: $text-secondary;
+		max-width: 38rem;
+		margin-inline: auto;
+	}
+
+	&__grid {
+		display: grid;
+		gap: 1rem;
+
+		@include media('>=tablet') {
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+		}
+	}
+
+	&__item {
+		height: 100%;
+		padding: 0;
+		background: $surface-mid;
+		border: 1px solid $border-mid;
+	}
+
+	&__card {
+		padding: 1.25rem;
+		height: 100%;
+	}
+
+	&__card-link {
+		display: flex;
+		align-items: center;
+		min-height: 2.75rem;
+		padding-block: 0.25rem;
+		color: inherit;
+		text-decoration: none;
+
+		&:hover,
+		&:focus-visible {
+			.events-featured-events__event-title {
+				color: $accent-light;
+				text-decoration: underline;
+			}
+		}
+	}
+
+	&__event-title {
+		color: $text-primary;
+	}
+
+	&__meta {
+		color: $text-secondary;
+	}
+
+	&__archive-btn {
+		min-height: 2.75rem;
+		display: inline-flex;
+		align-items: center;
+	}
+
+	&__cta {
+		margin-bottom: 0;
+	}
+}
+
+.msr-primary-cta--events {
+	@include media('>=desktop') {
+		position: relative;
+	}
+
+	.msr-primary-cta__preview {
+		color: rgba($text-primary, 0.72);
+		text-align: center;
+		max-width: 16rem;
+		line-height: 1.35;
+
+		@include media('>=desktop') {
+			position: absolute;
+			top: 100%;
+			right: 0;
+			margin-top: 0.15rem;
+			text-align: right;
+			white-space: nowrap;
+			font-size: 0.6875rem;
+		}
+	}
+}
+
+.msr-events-hero {
+	&__format-badge {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.35rem;
+		margin: 0 0 1rem;
+		padding: 0.45rem 0.9rem;
+		font-size: 0.8125rem;
+		font-weight: 600;
+		letter-spacing: 0.06em;
+		text-transform: uppercase;
+		color: rgba($text-primary, 0.94);
+		background: rgba($text-primary, 0.1);
+		border: 1px solid rgba($text-primary, 0.28);
+		border-radius: 999px;
+	}
+
+	&__cta-note {
+		text-align: center;
+		font-size: 0.875rem;
+		color: rgba($text-primary, 0.82);
+	}
+}

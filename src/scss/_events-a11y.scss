@@ -1,0 +1,199 @@
+// Accessibility — focus rings, skip link, touch targets (dark prestige theme)
+body.msr-events {
+	--events-focus-ring: #{$primary};
+	--events-focus-offset: 3px;
+	overflow-x: clip;
+	color: $text-primary;
+	background-color: $bg-dark;
+}
+
+.events-skip-link {
+	position: absolute;
+	top: 0.5rem;
+	left: 0.5rem;
+	z-index: 2000;
+	padding: 0.65rem 1rem;
+	background: $bg-dark;
+	color: $text-primary;
+	font-weight: 600;
+	text-decoration: none;
+	border-radius: var(--msr-radius, 2px);
+	transform: translateY(-140%);
+	transition: transform 0.2s ease;
+
+	&:focus,
+	&:focus-visible {
+		transform: translateY(0);
+		outline: 2px solid var(--events-focus-ring, #{$primary});
+		outline-offset: var(--events-focus-offset, 3px);
+	}
+}
+
+.screen-reader-text {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+	word-wrap: normal !important;
+}
+
+body.msr-events {
+	img,
+	video,
+	iframe,
+	.listing-video,
+	.listing-image {
+		max-width: 100%;
+	}
+
+	a:focus:not(:focus-visible),
+	button:focus:not(:focus-visible),
+	.btn:focus:not(:focus-visible),
+	input:focus:not(:focus-visible),
+	select:focus:not(:focus-visible),
+	textarea:focus:not(:focus-visible),
+	.events-filter-bar__tab:focus:not(:focus-visible) {
+		outline: none;
+		box-shadow: none;
+	}
+
+	a:focus-visible,
+	button:focus-visible,
+	.btn:focus-visible,
+	input:focus-visible,
+	select:focus-visible,
+	textarea:focus-visible,
+	.form-control:focus-visible,
+	.events-filter-bar__link:focus-visible,
+	.events-filter-bar__tab:focus-visible,
+	.navbar-toggler:focus-visible,
+	.pagination a.page-numbers:focus-visible,
+	header #cssmenu > ul > li > a:focus-visible {
+		outline: 2px solid var(--events-focus-ring, #{$primary});
+		outline-offset: var(--events-focus-offset, 3px);
+	}
+
+	.btn,
+	.btn-sm,
+	.btn-load-more,
+	.msr-primary-cta__main,
+	.navbar-brand,
+	.events-filter-bar__link,
+	.events-filter-bar__tab,
+	.events-site-footer__links a,
+	.events-site-footer__social-link,
+	header #cssmenu > ul > li > a,
+	header .navbar-toggler,
+	[id^='events-carousel-'] a,
+	.msr-filter-tabs .nav-link,
+	.msr-filter-tabs .events-filter-bar__tab,
+	.sponsor > a,
+	.listing-text a,
+	.events-topic-chip,
+	.pagination a.page-numbers {
+		min-height: 2.75rem;
+	}
+
+	.sponsor > a,
+	.events-site-footer__social-link,
+	header .navbar-toggler {
+		min-width: 2.75rem;
+	}
+
+	header .navbar-toggler {
+		justify-content: center;
+	}
+
+	.btn,
+	.btn-sm,
+	.btn-load-more,
+	.msr-primary-cta__main,
+	.navbar-brand,
+	.events-filter-bar__link,
+	.events-filter-bar__tab,
+	.events-site-footer__links a,
+	.events-site-footer__social-link,
+	header #cssmenu > ul > li > a,
+	header .navbar-toggler {
+		display: inline-flex;
+		align-items: center;
+	}
+
+	.events-topic-chip {
+		display: inline-flex;
+	}
+
+	.listing-text a,
+	.events-topic-chip {
+		padding: 0.35rem 0.65rem;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.btn,
+	.btn-load-more,
+	.msr-primary-cta__main {
+		justify-content: center;
+		padding-block: 0.65rem;
+	}
+
+	.events-site-footer__links a {
+		padding-block: 0.35rem;
+	}
+
+	.events-site-footer__social-link {
+		justify-content: center;
+		padding: 0.35rem;
+	}
+
+	.msr-events-listing,
+	.msr-events-listing__item {
+		max-width: 100%;
+		overflow-x: clip;
+	}
+
+	.search-highlight {
+		background: $gold;
+		color: $text-primary;
+	}
+
+	.awards-privacy-page {
+		color: $text-primary;
+
+		a {
+			color: $text-primary;
+			text-decoration: underline;
+			text-underline-offset: 0.15em;
+
+			&:hover,
+			&:focus-visible {
+				color: $gold-light;
+			}
+		}
+
+		.text-muted {
+			color: $text-secondary !important;
+		}
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	body.msr-events {
+		.msr-reveal {
+			opacity: 1 !important;
+			transform: none !important;
+		}
+
+		[id^='events-carousel-leaderboard-'].carousel,
+		#events-carousel-advert.carousel {
+			.carousel-item {
+				transition: none;
+			}
+		}
+	}
+}

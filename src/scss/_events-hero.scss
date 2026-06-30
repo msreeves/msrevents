@@ -1,0 +1,224 @@
+// Home hero — full-bleed image, layered scrim, display type, meta chips
+
+.msr-events-hero {
+	position: relative;
+	display: flex;
+	align-items: stretch;
+	min-height: clamp(24rem, 62vh, 38rem);
+	background-color: $bg-dark;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	overflow: hidden;
+	isolation: isolate;
+
+	&__bg {
+		position: absolute;
+		inset: 0;
+		z-index: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center;
+		pointer-events: none;
+	}
+
+	&--no-image {
+		background-image: linear-gradient(145deg, $surface-high 0%, $bg-dark 48%, $surface 100%);
+	}
+
+	&__scrim {
+		position: absolute;
+		inset: 0;
+		z-index: 0;
+		pointer-events: none;
+		background:
+			linear-gradient(
+				to top,
+				rgba($bg-dark, 0.94) 0%,
+				rgba($bg-dark, 0.72) 38%,
+				rgba($bg-dark, 0.35) 68%,
+				rgba($bg-dark, 0.2) 100%
+			),
+			linear-gradient(105deg, rgba($bg-dark, 0.82) 0%, rgba($bg-dark, 0.35) 52%, transparent 100%);
+	}
+
+	&--no-image &__scrim {
+		background: linear-gradient(
+			160deg,
+			rgba($bg-dark, 0.35) 0%,
+			rgba($bg-dark, 0.65) 55%,
+			rgba($bg-dark, 0.85) 100%
+		);
+	}
+
+	&__inner {
+		position: relative;
+		z-index: 1;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		padding: clamp(2.75rem, 7vw, 5rem) clamp(1.25rem, 4vw, 2.5rem);
+	}
+
+	&__content {
+		width: min(100%, 44rem);
+		text-align: center;
+	}
+
+	&__eyebrow {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		margin: 0 0 1rem;
+		padding: 0.35rem 0.85rem;
+		font-family: $body-text;
+		font-size: 0.6875rem;
+		font-weight: 700;
+		letter-spacing: 0.16em;
+		text-transform: uppercase;
+		color: $accent-light;
+		border: 1px solid rgba($accent, 0.45);
+		border-radius: 999px;
+		background: rgba($bg-dark, 0.45);
+		backdrop-filter: blur(6px);
+	}
+
+	&__eyebrow::before {
+		content: '';
+		width: 0.4rem;
+		height: 0.4rem;
+		border-radius: 50%;
+		background: $accent;
+		box-shadow: 0 0 10px rgba($accent, 0.65);
+	}
+
+	h1 {
+		margin: 0 0 0.85rem;
+		font-family: $display-text;
+		font-size: clamp(2.1rem, 5.5vw, 3.5rem);
+		font-weight: 700;
+		line-height: 1.08;
+		letter-spacing: -0.02em;
+		color: $text-primary;
+		text-wrap: balance;
+		text-shadow: 0 4px 28px rgba(0, 0, 0, 0.55);
+	}
+
+	&__lead {
+		margin: 0 0 1.25rem;
+		font-family: $display-text;
+		font-size: clamp(1.1rem, 2.4vw, 1.45rem);
+		font-weight: 600;
+		line-height: 1.35;
+		color: rgba($text-primary, 0.94);
+	}
+
+	&__facts {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 0.5rem 0.65rem;
+		margin: 0 0 1.5rem;
+		padding: 0;
+		list-style: none;
+	}
+
+	&__fact {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.45rem;
+		max-width: 100%;
+		padding: 0.5rem 0.9rem;
+		font-family: $body-text;
+		font-size: 0.875rem;
+		font-weight: 500;
+		line-height: 1.35;
+		color: $text-primary;
+		background: rgba($surface-mid, 0.78);
+		border: 1px solid rgba($accent, 0.28);
+		border-radius: 999px;
+		backdrop-filter: blur(8px);
+		box-shadow: 0 4px 18px rgba(0, 0, 0, 0.28);
+
+		i {
+			flex-shrink: 0;
+			color: $accent-light;
+			opacity: 0.95;
+		}
+	}
+
+	&__fact--address {
+		border-radius: 1rem;
+		text-align: left;
+
+		.msr-events-hero__fact-text {
+			p {
+				margin: 0;
+
+				+ p {
+					margin-top: 0.15rem;
+				}
+			}
+		}
+	}
+
+	.events-ctas,
+	.ctas {
+		margin-top: 0.25rem;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+		gap: 0.65rem;
+	}
+
+	.btn-primary {
+		color: $white;
+		background-color: $accent;
+		border-color: $accent;
+
+		&:hover,
+		&:focus,
+		&:focus-visible {
+			color: $white;
+			background-color: $accent-light;
+			border-color: $accent-light;
+		}
+	}
+
+	.btn-outline-primary {
+		color: $white;
+		border-color: rgba($white, 0.88);
+
+		&:hover,
+		&:focus,
+		&:focus-visible {
+			color: $bg-dark;
+			background-color: $white;
+			border-color: $white;
+		}
+	}
+
+	&__cta-note {
+		flex: 0 0 100%;
+		margin: 0.35rem 0 0;
+		font-size: 0.8125rem;
+		color: rgba($text-primary, 0.88);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.msr-events-hero__eyebrow::before {
+		box-shadow: none;
+	}
+}
+
+@media (prefers-reduced-transparency: reduce) {
+	.msr-events-hero__eyebrow,
+	.msr-events-hero__fact {
+		backdrop-filter: none;
+		background: $surface-mid;
+	}
+}

@@ -1,0 +1,90 @@
+// ============================================================
+// MSR Events Hub — Design tokens
+// Dark prestige theme: near-black surfaces, MSR blue accent
+// ============================================================
+
+// --- Brand accent ---
+$accent:        #0E4C92;   // MSR blue — primary accent
+$accent-light:  #6082B6;   // hover / highlight state
+$accent-dark:   #0a3a6e;   // active / pressed state
+
+// Aliases for partials ported from msrawards (gold → blue)
+$gold:          $accent;
+$gold-light:    $accent-light;
+$gold-dark:     $accent-dark;
+
+// --- Surfaces ---
+$bg-dark:       #0f0f0f;
+$surface:       #1a1a1a;
+$surface-mid:   #252525;
+$surface-high:  #303030;
+
+// --- Text ---
+$text-primary:  #f5f0ea;
+$text-secondary: #a09888;
+$text-muted:    #6e6460;
+
+// --- Borders ---
+$border-subtle: #1e1e1e;
+$border-mid:    #2e2e2e;
+$border-strong: #3e3e3e;
+
+// --- Legacy aliases ---
+$primary:  $accent;
+$primary-light: $accent-light;
+$blue:     $accent-light;
+$white:    #ffffff;
+$black:    #000000;
+$grey:     $surface-mid;
+$purple:   $surface;
+$yellow:   #FFFF00;
+
+// --- Typography ---
+$display-text: 'Playfair Display', 'Victor Mono', serif;
+$header-text:  'Victor Mono', monospace;
+$body-text:    'DM Sans', sans-serif;
+
+// --- Bootstrap 5 overrides (must come before @import bootstrap) ---
+$body-bg:           $bg-dark;
+$body-color:        $text-primary;
+$link-color:        $accent;
+$link-hover-color:  $accent-light;
+
+$font-family-base:  $body-text;
+
+$border-color:      $border-mid;
+$card-bg:           $surface;
+$card-border-color: $border-mid;
+
+$input-bg:              $surface;
+$input-color:           $text-primary;
+$input-border-color:    $border-strong;
+$input-focus-border-color: $accent;
+$input-focus-box-shadow: 0 0 0 0.2rem rgba($accent, 0.2);
+$input-placeholder-color: $text-muted;
+
+$nav-link-color:        $text-primary;
+$nav-link-hover-color:  $accent-light;
+
+$pagination-bg:         $surface;
+$pagination-color:      $text-primary;
+$pagination-border-color: $border-mid;
+$pagination-hover-bg:   $surface-mid;
+$pagination-hover-color: $accent;
+$pagination-active-bg:  $accent;
+$pagination-active-color: $bg-dark;
+
+// --- Layout tokens ---
+:root {
+	--msr-content-max: 72rem;
+	--msr-section-y: clamp(2.5rem, 5vw, 5rem);
+	--msr-radius: 2px;
+
+	--msr-accent: #{$accent};
+	--msr-accent-light: #{$accent-light};
+	--msr-surface: #{$surface};
+	--msr-bg: #{$bg-dark};
+	--msr-text: #{$text-primary};
+}
+
+@import 'include-media/dist/_include-media';

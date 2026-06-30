@@ -1,0 +1,143 @@
+// Home keypoints — panel grid aligned with msrawards keypointlist
+.events-keypoints {
+	margin: 2rem 0;
+
+	.post.panel {
+		flex-direction: column;
+		height: 100%;
+		margin-bottom: 0;
+
+		@include media('>tablet', '<=desktop') {
+			flex-direction: column;
+		}
+
+		.listing-text {
+			padding: 20px;
+
+			@include media('>tablet', '<=desktop') {
+				padding: 20px;
+				width: 100%;
+				margin-top: 0;
+				margin-bottom: 0;
+			}
+		}
+
+		h3 {
+			color: $text-primary;
+		}
+
+		.count {
+			font-family: $header-text;
+			color: $accent-light;
+			line-height: 1;
+		}
+
+		.msr-rich-text {
+			color: $text-secondary;
+			font-size: 0.95rem;
+
+			p:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+// Programme resources / publications
+.events-publications {
+	margin: 2rem 0 2.5rem;
+
+	&__header {
+		background: linear-gradient(160deg, rgba($accent, 0.1) 0%, $surface-mid 60%, $bg-dark 100%);
+		border: 1px solid $border-mid;
+		border-radius: $border-radius-lg;
+		padding: 1.75rem 1.5rem;
+	}
+
+	&__title {
+		font-family: $header-text;
+		color: $text-primary;
+	}
+
+	&__lead {
+		color: $text-secondary;
+		max-width: 40rem;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+.events-publications-page {
+	padding: 1.5rem 0 2.5rem;
+
+	&__hero {
+		background: linear-gradient(160deg, rgba($accent, 0.12) 0%, $surface-mid 55%, $bg-dark 100%);
+		border: 1px solid $border-mid;
+		border-radius: $border-radius-lg;
+		padding: 2rem 1.5rem;
+		margin-bottom: 1.5rem;
+	}
+
+	&__title {
+		font-family: $header-text;
+		color: $text-primary;
+		margin-bottom: 0.75rem;
+	}
+
+	&__lead,
+	&__intro {
+		color: $text-secondary;
+		max-width: 42rem;
+	}
+}
+
+.publication-card {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+
+	&__body {
+		display: flex;
+		flex-direction: column;
+		flex: 1 1 auto;
+		padding: 1.25rem 1.25rem 1.5rem;
+		text-align: left;
+	}
+
+	&__type {
+		color: $accent-light;
+		font-family: $header-text;
+		font-weight: 600;
+		letter-spacing: 0.06em;
+		text-transform: uppercase;
+	}
+
+	&__title {
+		font-family: $header-text;
+		color: $text-primary;
+	}
+
+	&__summary {
+		color: $text-primary;
+		flex: 1 1 auto;
+	}
+
+	.msr-card-media {
+		border-radius: 2px 2px 0 0;
+		flex-shrink: 0;
+	}
+
+	&__placeholder .msr-card-media__placeholder-icon {
+		font-size: 2.25rem;
+	}
+
+	.btn {
+		margin-top: auto;
+		align-self: flex-start;
+	}
+}
+
+.events-publications-grid {
+	margin-top: 0.25rem;
+}

@@ -1,0 +1,90 @@
+// Hero event carousel — calmer height, visible controls, focus rings
+.msr-hero-carousel {
+	position: relative;
+
+	.msr-hero-carousel__bg {
+		height: auto;
+		min-height: min(72vh, 40rem);
+		max-height: min(88vh, 52rem);
+	}
+
+	.msr-hero-carousel__mask {
+		min-height: min(72vh, 40rem);
+		max-height: min(88vh, 52rem);
+	}
+
+	.carousel-hero-title {
+		font-size: clamp(1.5rem, 4vw, 2.75rem);
+		font-weight: 700;
+		line-height: 1.15;
+		color: $text-primary;
+	}
+
+	.msr-hero-carousel__inner {
+		max-width: 48rem;
+		padding-bottom: 0.5rem;
+	}
+
+	.msr-hero-carousel__indicators {
+		z-index: 4;
+
+		[type='button'] {
+			width: 2.75rem;
+			height: 0.35rem;
+			border: 0;
+			border-radius: 2px;
+			opacity: 0.55;
+			background-color: $text-secondary;
+
+			&.active {
+				opacity: 1;
+				background-color: $gold;
+			}
+
+			&:focus-visible {
+				opacity: 1;
+				outline: 2px solid $gold;
+				outline-offset: 2px;
+			}
+		}
+	}
+
+	.msr-hero-carousel__control {
+		width: 3.25rem;
+		z-index: 4;
+		opacity: 0.9;
+		filter: invert(1);
+
+		&:hover {
+			opacity: 1;
+		}
+
+		&:focus-visible {
+			opacity: 1;
+			outline: 2px solid $gold;
+			outline-offset: 2px;
+		}
+	}
+
+	.ctas .btn {
+		min-width: 10rem;
+	}
+}
+
+.msrevents-stories-list .load_more .btn-load-more {
+	background-color: $gold;
+	border-color: $gold;
+	color: $text-primary;
+	font-family: $header-text;
+	font-weight: 700;
+	letter-spacing: 0.06em;
+	padding: 1rem 1.5rem;
+	text-transform: uppercase;
+
+	&:hover,
+	&:focus-visible {
+		background-color: $gold-light;
+		border-color: $gold-light;
+		color: $text-primary;
+	}
+}

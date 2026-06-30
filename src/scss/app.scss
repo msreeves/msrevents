@@ -1,0 +1,48 @@
+/*
+Theme Name: msrevents
+Theme URI: https: //www.msreeves.co.uk/events
+Description: This is my MSR events theme created from scratch files in Wordpress, it is a Wordpress events website to is focused on a event heavy based website (Create Custom Posts, posts split by categories etc, hosting sub-events). It is built with Node.js modules and compiled with sass to complie css with webpack and laravel-mix.
+Author: Michael Reeves
+Author URI: https://www.msreeves.co.uk
+Version: 1.0.0
+Requires at least: 6.4 
+Tested up to: 6.4.2 
+Requires PHP: 7.4
+Terminal Command - 'npm run watch' 
+*/
+
+
+// Custom variable overrides (defined before Bootstrap so !default vars are replaced)
+@import 'variables';
+@import 'fonts';
+@import 'fontawesome';
+
+// Bootstrap 5.3 — trimmed SASS bundle (Phase 19 CSS budget)
+@import 'bootstrap-core';
+
+// Theme-specific layers on top of Bootstrap
+@import 'event-context';
+@import 'hub-layout';
+@import 'events-filter-bar';
+@import 'events-a11y';
+@import 'events-media';
+@import 'events-content';
+@import 'events-ecosystem';
+@import 'events-programme';
+@import 'events-footer';
+@import 'events-hero';
+@import 'events-logos';
+@import 'events-responsive';
+@import 'header';
+@import 'events-shell';
+@import 'events-portfolio';
+@import 'events-ux';
+@import 'events-archive';
+@import 'events-single';
+@import 'events-routes';
+@import 'events-podcasts';
+@import 'events-publications';
+@import 'events-responsive-ux';
+@import 'events-search';
+@import 'content';
+@import 'footer';

@@ -1,0 +1,51 @@
+{
+    "ID": 4,
+    "key": "group_65204f1681343",
+    "title": "Advert",
+    "fields": [
+        {
+            "ID": 5,
+            "key": "field_65204f16026a3",
+            "label": "Link",
+            "name": "link",
+            "aria-label": "",
+            "prefix": "acf",
+            "type": "link",
+            "value": null,
+            "menu_order": 0,
+            "instructions": "",
+            "required": 0,
+            "id": "",
+            "class": "",
+            "conditional_logic": 0,
+            "parent": 4,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "_name": "link",
+            "_valid": 1
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "advert"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "_valid": true
+}

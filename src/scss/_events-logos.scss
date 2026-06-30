@@ -1,0 +1,136 @@
+// Partner / sponsor logo wells — dark surface; MSR blue monochrome for contrast on dark bg
+$events-logo-blue-filter: brightness(0) saturate(100%) invert(33%) sepia(52%) saturate(1200%)
+	hue-rotate(182deg) brightness(92%) contrast(92%);
+
+.site-header .navbar-brand img.custom-logo,
+.events-logo-tile img,
+.events-main-sponsor__logo img,
+.partner-listing-image.events-logo-tile img {
+	filter: $events-logo-blue-filter;
+}
+
+.events-logo-tile {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	min-height: 6.5rem;
+	padding: 1rem 1.25rem;
+	background: $surface-mid;
+	border: 1px solid $border-mid;
+	border-radius: 4px;
+	overflow: hidden;
+	box-sizing: border-box;
+
+	img,
+	.msr-card-media__img {
+		display: block;
+		width: auto;
+		height: auto;
+		max-width: 100%;
+		max-height: 4rem;
+		object-fit: contain;
+		margin: 0 auto;
+	}
+
+	.msr-card-media {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		max-width: 100%;
+		max-height: 4rem;
+		overflow: hidden;
+		background: transparent;
+		aspect-ratio: auto;
+	}
+}
+
+.events-logo-tile--compact {
+	min-height: 5rem;
+	min-width: 6.5rem;
+	max-width: 8.5rem;
+	padding: 0.65rem 0.85rem;
+
+	img,
+	.msr-card-media__img {
+		max-height: 3.25rem;
+	}
+
+	.msr-card-media {
+		max-height: 3.25rem;
+	}
+}
+
+.site-header .navbar-brand.events-logo-tile--compact {
+	min-height: auto;
+	padding: 0;
+	background: transparent;
+	border: 0;
+	max-width: 11rem;
+}
+
+.site-header .navbar-brand {
+	overflow: hidden;
+	max-width: 11rem;
+
+	img.custom-logo {
+		display: block;
+		max-width: 100%;
+		max-height: 2.5rem;
+		width: auto;
+		height: auto;
+		object-fit: contain;
+	}
+}
+
+.events-main-sponsor {
+	padding: 1.25rem 0;
+	background: $surface;
+	border-top: 1px solid $border-mid;
+	border-bottom: 1px solid $border-mid;
+
+	&__label {
+		margin: 0 0 0.75rem;
+		text-align: center;
+		font-size: 0.75rem;
+		font-weight: 600;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+		color: $text-secondary;
+	}
+
+	&__logos {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: stretch;
+		justify-content: center;
+		gap: 1rem 1.25rem;
+	}
+
+	&__logo {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-decoration: none;
+		min-height: 5.5rem;
+		max-width: 12rem;
+	}
+}
+
+.events-partner-chip {
+	flex: 0 0 auto;
+	max-width: 8.5rem;
+}
+
+body.msr-events {
+	.partner-listing-image.events-logo-tile {
+		background: $surface-mid;
+		border: 1px solid $border-mid;
+		box-shadow: none;
+
+		&:hover {
+			box-shadow: 0 4px 16px rgba($accent, 0.2);
+		}
+	}
+}

@@ -1,0 +1,244 @@
+// Tablet + mobile — events hub programme routes
+.msr-filter-tabs {
+	position: relative;
+
+	.events-filter-bar__list {
+		scroll-snap-type: x proximity;
+	}
+
+	.events-filter-bar__item {
+		scroll-snap-align: start;
+	}
+}
+
+@include media('<=tablet') {
+	body.msr-events section:not(#advert) {
+		padding-top: calc(var(--msr-section-y, 5rem) * 0.55);
+		padding-bottom: calc(var(--msr-section-y, 5rem) * 0.55);
+	}
+
+	body.msr-events .site-main .container,
+	body.msr-events #site-content .container {
+		padding-left: 1rem;
+		padding-right: 1rem;
+	}
+
+	body.msr-events .site-main .row > [class*='col-'],
+	body.msr-events #site-content .row > [class*='col-'] {
+		flex: 0 0 100%;
+		max-width: 100%;
+	}
+
+	body.msr-events .entry-content {
+		overflow-wrap: anywhere;
+
+		img,
+		iframe,
+		video,
+		table {
+			max-width: 100%;
+		}
+	}
+
+	.msr-search-pagination .nav-links {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 0.35rem;
+	}
+
+	.events-main-sponsor {
+		padding: 1rem 0;
+
+		&__logos {
+			gap: 0.75rem 1rem;
+		}
+	}
+
+	.msr-filter-tabs {
+		--msr-filter-scroll-fade: #{$bg-dark};
+
+		margin-left: -0.25rem;
+		margin-right: -0.25rem;
+		padding-left: 0.25rem;
+		padding-right: 0.25rem;
+
+		&::before,
+		&::after {
+			content: '';
+			position: absolute;
+			top: 0;
+			bottom: 0.85rem;
+			width: 1.25rem;
+			pointer-events: none;
+			z-index: 2;
+		}
+
+		&::before {
+			left: 0;
+			background: linear-gradient(90deg, var(--msr-filter-scroll-fade) 0%, transparent 100%);
+		}
+
+		&::after {
+			right: 0;
+			background: linear-gradient(270deg, var(--msr-filter-scroll-fade) 0%, transparent 100%);
+		}
+
+		.events-filter-bar__list {
+			flex-wrap: nowrap;
+			justify-content: flex-start;
+			overflow-x: auto;
+			-webkit-overflow-scrolling: touch;
+			scrollbar-width: thin;
+			padding-bottom: 0.85rem;
+			padding-inline: 0.35rem;
+			scroll-padding-inline: 0.5rem;
+		}
+
+		.events-filter-bar__item {
+			flex: 0 0 auto;
+		}
+	}
+
+	.msr-events-hero {
+		min-height: clamp(20rem, 52vh, 30rem);
+
+		h1 {
+			font-size: clamp(1.85rem, 7vw, 2.5rem);
+		}
+
+		&__facts {
+			flex-direction: column;
+			align-items: stretch;
+		}
+
+		&__fact {
+			justify-content: flex-start;
+			border-radius: 0.75rem;
+		}
+
+		.events-ctas .btn {
+			width: 100%;
+			max-width: 18rem;
+		}
+	}
+
+	.people .row > [class*='col-'] {
+		flex: 0 0 100%;
+		max-width: 100%;
+	}
+
+	// Bootstrap d-lg-none — toggler visible below 992px (tablet + phone)
+	header .navbar-toggler {
+		box-sizing: border-box;
+		min-width: 2.75rem;
+		min-height: 2.75rem;
+		padding: 0.5rem;
+		margin-left: auto;
+
+		&:focus-visible {
+			outline: 2px solid $primary;
+			outline-offset: 3px;
+		}
+	}
+}
+
+@include media('<=phone') {
+	header .navbar {
+		padding: 0.75rem 1rem !important;
+	}
+
+	header .navbar-toggler {
+		min-width: 2.75rem;
+		min-height: 2.75rem;
+		padding: 0.5rem;
+		margin-left: auto;
+
+		&:focus-visible {
+			outline: 2px solid $primary;
+			outline-offset: 3px;
+		}
+	}
+
+	.site-header .msr-primary-cta {
+		width: 100%;
+		gap: 0.5rem;
+
+		.btn {
+			width: 100%;
+			min-height: 2.75rem;
+			text-align: center;
+		}
+	}
+
+	header .msr-events-mobile-nav {
+		width: min(100vw, 20rem);
+
+		#cssmenu {
+			width: 100%;
+
+			> ul > li > a {
+				min-height: 2.75rem;
+				display: flex;
+				align-items: center;
+				padding-top: 0.65rem;
+				padding-bottom: 0.65rem;
+			}
+		}
+	}
+
+	.events-filter-bar {
+		&__link,
+		&__tab {
+			min-height: 2.75rem;
+			display: inline-flex;
+			align-items: center;
+			padding-inline: 0.35rem;
+			font-size: 0.85rem;
+		}
+	}
+
+	.msr-site-search {
+		padding: 2rem 1rem !important;
+
+		.input-group {
+			flex-direction: column;
+			align-items: stretch;
+		}
+
+		.form-control,
+		.btn[type='submit'] {
+			width: 100%;
+			min-height: 2.75rem;
+		}
+	}
+
+	.load_more .btn-load-more {
+		min-height: 2.75rem;
+		min-width: 10rem;
+		padding-inline: 1.25rem;
+	}
+
+	.msr-card-media {
+		max-height: 12rem;
+	}
+
+	.msr-single-media__frame {
+		max-height: min(20rem, 56vw);
+	}
+
+	.ctas {
+		.btn,
+		button,
+		a .btn {
+			min-height: 2.75rem;
+			width: 100%;
+		}
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.msr-filter-tabs .events-filter-bar__list {
+		scroll-behavior: auto;
+	}
+}

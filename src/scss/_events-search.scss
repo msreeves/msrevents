@@ -1,0 +1,73 @@
+// S15 — search type pills, result badges, empty featured events, header search
+
+.events-search-page {
+	.events-search-type-pills {
+		margin-bottom: 1.5rem;
+	}
+
+	.events-search-results {
+		margin-top: 1rem;
+	}
+}
+
+.events-search-result-type {
+	display: inline-block;
+	margin-bottom: 0.65rem;
+	padding: 0.2rem 0.65rem;
+	border: 1px solid $accent;
+	border-radius: 999px;
+	background: $surface-mid;
+	color: $text-primary;
+	font-family: $header-text;
+	font-size: 0.72rem;
+	font-weight: 700;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+}
+
+.events-search-result {
+	.events-search-result-type {
+		margin-left: 0.25rem;
+	}
+
+	&--event {
+		.event-card {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.events-search-popular {
+	&__term {
+		text-transform: capitalize;
+	}
+}
+
+.events-search-empty-featured {
+	.events-featured-events {
+		margin-top: 0;
+	}
+}
+
+.events-header-search {
+	background: rgba($bg-dark, 0.98);
+	border-top: 1px solid $border-mid;
+
+	.msr-site-search--compact {
+		padding: 0;
+	}
+}
+
+.events-header-search__toggle {
+	min-width: 2.75rem;
+	min-height: 2.75rem;
+	padding: 0.35rem 0.5rem;
+	font-size: 1.1rem;
+	line-height: 1;
+	text-decoration: none;
+
+	&:hover,
+	&:focus-visible {
+		color: $accent-light;
+	}
+}

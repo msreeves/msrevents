@@ -1,0 +1,96 @@
+// S14 — about, post single, podcasts hero, error page
+
+.events-about-page {
+	&__header,
+	&__intro,
+	&__card,
+	&__disclaimer {
+		background: $surface-mid;
+		border: 1px solid $border-mid;
+		border-radius: $border-radius-lg;
+		padding: 1.75rem 1.5rem;
+	}
+
+	&__card {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+	}
+}
+
+.events-post-single {
+	&__header {
+		background: $surface-mid;
+		border: 1px solid $border-mid;
+		border-radius: $border-radius-lg;
+		padding: 1.75rem 1.5rem;
+	}
+
+	&__topics {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+		justify-content: center;
+	}
+
+	&__meta {
+		color: $text-secondary;
+		font-size: 0.95rem;
+	}
+}
+
+.events-post-related {
+	margin-top: 2rem;
+	padding-top: 1.5rem;
+	border-top: 1px solid $border-mid;
+
+	&__title {
+		font-family: $header-text;
+		color: $text-primary;
+	}
+}
+
+.events-podcasts-hero {
+	background: linear-gradient(160deg, rgba($accent, 0.14) 0%, $surface-mid 60%, $bg-dark 100%);
+	border: 1px solid $border-mid;
+	border-radius: $border-radius-lg;
+	padding: 2rem 1.5rem;
+	margin-bottom: 1.5rem;
+
+	&__eyebrow {
+		color: $accent-light;
+		font-family: $header-text;
+		font-size: 0.8rem;
+		font-weight: 700;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+	}
+
+	&__title {
+		font-family: $header-text;
+		color: $text-primary;
+	}
+
+	&__lead {
+		color: $text-secondary;
+		max-width: 36rem;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	&__meta {
+		color: $text-secondary;
+	}
+}
+
+.events-error-page {
+	&__search {
+		max-width: 32rem;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.msr-site-search {
+		padding: 1.25rem 0 0;
+	}
+}

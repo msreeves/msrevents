@@ -1,0 +1,21 @@
+// Scroll-reveal (replaces Animate.css backInLeft on heroes)
+.msr-reveal {
+	opacity: 0;
+	transform: translate3d(-2.5rem, 0, 0);
+	transition:
+		opacity 0.75s ease,
+		transform 0.75s ease;
+
+	&.is-visible {
+		opacity: 1;
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.msr-reveal {
+		opacity: 1;
+		transform: none;
+		transition: none;
+	}
+}

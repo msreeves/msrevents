@@ -1,0 +1,82 @@
+// Driven by body.msr-event-context--* from mu-plugins/msr-event-context.php
+
+body.msr-event-context--hub {
+    --msr-heading-weight: 700;
+    --msr-section-density: 1;
+}
+
+body.msr-event-context--awards {
+    --msr-heading-weight: 800;
+    --msr-section-density: 1.05;
+    letter-spacing: 0.04em;
+}
+
+body.msr-event-context--seminars {
+    --msr-heading-weight: 600;
+    --msr-section-density: 0.98;
+    letter-spacing: 0.02em;
+}
+
+.msr-primary-cta__main {
+    font-weight: var(--msr-heading-weight, 800);
+}
+
+body.msr-event-context .panel h1,
+body.msr-event-context .panel h2 {
+    font-weight: var(--msr-heading-weight, 800);
+    color: $text-primary;
+}
+
+body.msr-event-context section:not(#advert) {
+    padding-top: calc(var(--msr-section-y, 5rem) * var(--msr-section-density, 1));
+    padding-bottom: calc(var(--msr-section-y, 5rem) * var(--msr-section-density, 1));
+}
+
+// Header programme CTAs — gold accent on dark navbar
+.site-header .msr-primary-cta {
+    .btn {
+        font-size: 0.95rem;
+        padding: 0.55rem 1.15rem;
+        border-width: 2px;
+        white-space: nowrap;
+    }
+
+    .msr-primary-cta__main {
+        font-weight: 700;
+        background-color: $gold;
+        border-color: $gold;
+        color: $text-primary;
+
+        &:hover,
+        &:focus,
+        &:focus-visible {
+            background-color: $gold-light;
+            border-color: $gold-light;
+            color: $text-primary;
+        }
+    }
+
+    .msr-primary-cta__sub,
+    .msr-primary-cta__link {
+        font-weight: 600;
+        color: $text-primary;
+        border-color: $border-strong;
+
+        &:hover,
+        &:focus-visible {
+            color: $text-primary;
+            border-color: $gold-light;
+            background-color: rgba($gold, 0.12);
+        }
+    }
+}
+
+body.msr-event-context--awards .site-header .msr-primary-cta__main {
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+
+body.msr-event-context--seminars .site-header .msr-primary-cta__main {
+    text-transform: none;
+}

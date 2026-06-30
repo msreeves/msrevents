@@ -1,0 +1,78 @@
+{
+    "ID": 86,
+    "key": "group_6489d18aa6b62",
+    "title": "Presentation Time",
+    "fields": [
+        {
+            "ID": 87,
+            "key": "field_6489d18a7d271",
+            "label": "Start Time",
+            "name": "start_time",
+            "aria-label": "",
+            "prefix": "acf",
+            "type": "time_picker",
+            "value": null,
+            "menu_order": 0,
+            "instructions": "",
+            "required": 0,
+            "id": "",
+            "class": "",
+            "conditional_logic": 0,
+            "parent": 86,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "g:i a",
+            "return_format": "g:i a",
+            "_name": "start_time",
+            "_valid": 1
+        },
+        {
+            "ID": 88,
+            "key": "field_64c0cb5017057",
+            "label": "End Time",
+            "name": "end_time",
+            "aria-label": "",
+            "prefix": "acf",
+            "type": "time_picker",
+            "value": null,
+            "menu_order": 1,
+            "instructions": "",
+            "required": 0,
+            "id": "",
+            "class": "",
+            "conditional_logic": 0,
+            "parent": 86,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "g:i a",
+            "return_format": "g:i a",
+            "_name": "end_time",
+            "_valid": 1
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "taxonomy",
+                "operator": "==",
+                "value": "award"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": false,
+    "_valid": true
+}

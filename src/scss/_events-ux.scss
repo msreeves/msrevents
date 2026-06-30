@@ -1,0 +1,143 @@
+// S10 — event meta chips, calendar demo, countdown, sticky mobile CTA
+
+.events-event-meta-chips {
+	margin-top: 0.5rem;
+}
+
+.events-event-chip {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4rem;
+	min-height: 2.75rem;
+	padding: 0.35rem 0.75rem;
+	font-size: 0.8125rem;
+	font-weight: 600;
+	letter-spacing: 0.03em;
+	text-transform: uppercase;
+	color: $white;
+	background: rgba($accent-dark, 0.92);
+	border: 1px solid rgba($accent-light, 0.55);
+	border-radius: 999px;
+
+	i {
+		opacity: 0.9;
+		font-size: 0.85em;
+	}
+}
+
+.events-event-calendar {
+	margin: 1.75rem 0 0;
+	padding: 1.25rem 1rem;
+	background: rgba($surface-mid, 0.9);
+	border: 1px solid $border-mid;
+	border-top: 2px solid $accent;
+	border-radius: 2px;
+
+	&__title {
+		font-family: $header-text;
+		color: $text-primary;
+		margin-bottom: 0.35rem;
+	}
+
+	&__lead {
+		color: $text-secondary;
+	}
+
+	&__link {
+		min-height: 2.75rem;
+		display: inline-flex;
+		align-items: center;
+	}
+}
+
+.events-registration-countdown {
+	margin: 1rem 0 0;
+	padding: 1rem 1.1rem;
+	text-align: center;
+	background: linear-gradient(135deg, rgba($accent, 0.22) 0%, rgba($surface-high, 0.95) 100%);
+	border: 1px solid rgba($accent-light, 0.45);
+	border-radius: 2px;
+
+	&__label {
+		font-size: 0.75rem;
+		font-weight: 700;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		color: $accent-light;
+	}
+
+	&__value {
+		font-family: $display-text;
+		font-size: 1.15rem;
+		font-weight: 700;
+		color: $text-primary;
+	}
+
+	&__note {
+		margin-top: 0.35rem;
+		color: $text-secondary;
+	}
+}
+
+.events-sticky-cta {
+	display: none;
+
+	@include media('<=tablet') {
+		display: block;
+		position: fixed;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 1040;
+		padding: 0.65rem 1rem calc(0.65rem + env(safe-area-inset-bottom, 0px));
+		background: rgba($bg-dark, 0.96);
+		border-top: 1px solid $border-mid;
+		box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.35);
+		backdrop-filter: blur(8px);
+	}
+
+	&__inner {
+		display: grid;
+		gap: 0.35rem;
+		max-width: 28rem;
+		margin-inline: auto;
+	}
+
+	&__btn {
+		width: 100%;
+		min-height: 2.75rem;
+		justify-content: center;
+	}
+
+	&__note {
+		text-align: center;
+		font-size: 0.75rem;
+		color: $text-secondary;
+	}
+}
+
+body.msr-events.msr-events-single--sticky-cta {
+	@include media('<=tablet') {
+		padding-bottom: calc(5.5rem + env(safe-area-inset-bottom, 0px));
+	}
+}
+
+.event-card,
+.event-listing-card {
+	.events-event-meta-chips {
+		justify-content: flex-start;
+	}
+}
+
+.events-featured-events {
+	&__chips {
+		margin-top: 0.65rem;
+		justify-content: flex-start;
+	}
+
+	.events-event-chip {
+		font-size: 0.6875rem;
+		min-height: 2rem;
+		padding: 0.25rem 0.55rem;
+	}
+}
