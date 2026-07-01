@@ -7,7 +7,7 @@ body.msr-events {
 	background-color: $bg-dark;
 }
 
-.events-skip-link {
+.msr-skip-link {
 	position: absolute;
 	top: 0.5rem;
 	left: 0.5rem;
@@ -73,7 +73,9 @@ body.msr-events {
 	.events-filter-bar__tab:focus-visible,
 	.navbar-toggler:focus-visible,
 	.pagination a.page-numbers:focus-visible,
-	header #cssmenu > ul > li > a:focus-visible {
+	.events-nav__toggle:focus-visible,
+	.events-nav__link:focus-visible,
+	.events-nav__sublink:focus-visible {
 		outline: 2px solid var(--events-focus-ring, #{$primary});
 		outline-offset: var(--events-focus-offset, 3px);
 	}
@@ -87,7 +89,9 @@ body.msr-events {
 	.events-filter-bar__tab,
 	.events-site-footer__links a,
 	.events-site-footer__social-link,
-	header #cssmenu > ul > li > a,
+	.events-nav__link,
+	.events-nav__sublink,
+	.events-nav__toggle,
 	header .navbar-toggler,
 	[id^='events-carousel-'] a,
 	.msr-filter-tabs .nav-link,

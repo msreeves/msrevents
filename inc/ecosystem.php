@@ -62,22 +62,22 @@ function msrevents_render_ecosystem_band() {
 		return;
 	}
 	?>
-	<section class="events-ecosystem msr-reveal" aria-labelledby="events-ecosystem-heading">
+	<section class="msr-ecosystem msr-reveal" aria-labelledby="msr-ecosystem-heading">
 		<div class="container">
-			<header class="events-ecosystem__header text-center mb-4">
-				<h2 id="events-ecosystem-heading" class="h4 events-ecosystem__title mb-2">
+			<header class="msr-ecosystem__header text-center mb-4">
+				<h2 id="msr-ecosystem-heading" class="h4 msr-ecosystem__title mb-2">
 					<?php echo esc_html( msrevents_get_ecosystem_band_title() ); ?>
 				</h2>
-				<p class="events-ecosystem__lead mb-0">
+				<p class="msr-ecosystem__lead mb-0">
 					<?php echo esc_html( msrevents_get_ecosystem_band_lead() ); ?>
 				</p>
 			</header>
 			<div class="row g-3 justify-content-center">
 				<?php foreach ( $links as $link ) : ?>
 					<div class="col-md-4">
-						<div class="events-ecosystem__card h-100">
-							<h3 class="h6 events-ecosystem__card-title mb-2"><?php echo esc_html( $link['label'] ); ?></h3>
-							<p class="small events-ecosystem__card-copy mb-3"><?php echo esc_html( $link['description'] ); ?></p>
+						<div class="msr-ecosystem__card h-100">
+							<h3 class="h6 msr-ecosystem__card-title mb-2"><?php echo esc_html( $link['label'] ); ?></h3>
+							<p class="small msr-ecosystem__card-copy mb-3"><?php echo esc_html( $link['description'] ); ?></p>
 							<a class="btn btn-outline-primary btn-sm" href="<?php echo esc_url( $link['url'] ); ?>">
 								<?php echo esc_html( $link['cta'] ); ?>
 							</a>

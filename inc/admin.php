@@ -234,13 +234,13 @@ function msrevents_get_primary_nav_fallback_links() {
  * @return void
  */
 function msrevents_primary_menu_fallback() {
-	echo '<div id="cssmenu"><ul>';
+	echo '<div id="cssmenu" class="events-nav"><ul class="events-nav__list">';
 	foreach ( msrevents_get_primary_nav_fallback_links() as $link ) {
 		if ( empty( $link['url'] ) ) {
 			continue;
 		}
 		printf(
-			'<li><a href="%s"><span>%s</span></a></li>',
+			'<li class="events-nav__item"><a class="events-nav__link" href="%s"><span>%s</span></a></li>',
 			esc_url( $link['url'] ),
 			esc_html( $link['title'] )
 		);

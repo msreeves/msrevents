@@ -20,7 +20,7 @@
 	.events-navbar__inner {
 		align-items: center;
 		gap: 0.5rem 1rem;
-		flex-wrap: wrap;
+		flex-wrap: nowrap;
 	}
 
 	.navbar-brand {
@@ -29,8 +29,7 @@
 		flex-shrink: 0;
 		margin-right: 0;
 		padding: 0;
-		max-width: 11rem;
-		order: 1;
+		max-width: none;
 
 		img.custom-logo {
 			display: block;
@@ -41,7 +40,6 @@
 	}
 
 	.navbar-toggler {
-		order: 3;
 		margin-left: auto;
 
 		@include media('<=tablet') {
@@ -57,12 +55,7 @@
 		}
 	}
 
-	.events-header-search__toggle {
-		order: 2;
-		margin-left: auto;
-	}
-
-	.msr-events-mobile-nav.offcanvas {
+	.site-header__mobile-nav.offcanvas {
 		order: 2;
 	}
 
@@ -71,21 +64,8 @@
 		align-items: center;
 	}
 
-	#cssmenu > ul {
-		align-items: center;
-		gap: 0.15rem 0.35rem;
-
-		> li > a {
-			font-family: $body-text;
-			font-size: 0.9375rem;
-			font-weight: 600;
-			letter-spacing: 0.02em;
-			padding: 0.5rem 0.75rem;
-		}
-	}
-
 	@include media('>=desktop') {
-		.msr-events-mobile-nav.offcanvas {
+		.site-header__mobile-nav.offcanvas {
 			position: static;
 			visibility: visible;
 			transform: none;
@@ -112,10 +92,6 @@
 
 		.navbar-toggler {
 			display: none;
-		}
-
-		#cssmenu > ul {
-			justify-content: flex-end;
 		}
 	}
 

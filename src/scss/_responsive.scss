@@ -171,19 +171,11 @@
 		}
 	}
 
-	header .msr-events-mobile-nav {
+	header .site-header__mobile-nav {
 		width: min(100vw, 20rem);
 
-		#cssmenu {
-			width: 100%;
-
-			> ul > li > a {
-				min-height: 2.75rem;
-				display: flex;
-				align-items: center;
-				padding-top: 0.65rem;
-				padding-bottom: 0.65rem;
-			}
+		.events-nav__link {
+			min-height: 2.75rem;
 		}
 	}
 

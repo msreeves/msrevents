@@ -1,18 +1,32 @@
-// Scroll-reveal (replaces Animate.css backInLeft on heroes)
-.msr-reveal {
+// Scroll-reveal — content stays visible until JS enhances (html.js-reveal).
+html.js-reveal .msr-reveal:not(.is-visible) {
 	opacity: 0;
 	transform: translate3d(-2.5rem, 0, 0);
 	transition:
 		opacity 0.75s ease,
 		transform 0.75s ease;
+}
 
-	&.is-visible {
-		opacity: 1;
-		transform: translate3d(0, 0, 0);
-	}
+html.js-reveal .msr-reveal.is-visible {
+	opacity: 1;
+	transform: translate3d(0, 0, 0);
+}
+
+html.js-reveal .msr-reveal--up:not(.is-visible) {
+	transform: translate3d(0, 1.75rem, 0);
+}
+
+html.js-reveal .msr-reveal--up.is-visible {
+	transform: translate3d(0, 0, 0);
+}
+
+.msr-reveal {
+	opacity: 1;
+	transform: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
+	html.js-reveal .msr-reveal:not(.is-visible),
 	.msr-reveal {
 		opacity: 1;
 		transform: none;

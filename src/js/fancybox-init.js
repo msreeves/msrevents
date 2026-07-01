@@ -1,25 +1,32 @@
 /**
- * Gallery lightbox — Fancybox bundled via Vite.
+ * Gallery lightbox — Fancybox loaded only when gallery markup is present.
  */
-import { Fancybox } from '@fancyapps/ui';
-import '@fancyapps/ui/dist/fancybox.css';
-
 document.addEventListener('DOMContentLoaded', function () {
-	Fancybox.bind('[data-fancybox="gallery"]', {
-		Toolbar: false,
-		animated: false,
-		dragToClose: false,
-		showClass: false,
-		hideClass: false,
-		closeButton: 'top',
-		Image: {
-			click: 'close',
-			wheel: 'slide',
-			zoom: false,
-			fit: 'cover',
-		},
-		Thumbs: {
-			minScreenHeight: 0,
-		},
+	if (!document.querySelector('[data-fancybox="gallery"]')) {
+		return;
+	}
+
+	Promise.all([
+		import('@fancyapps/ui'),
+		import('@fancyapps/ui/dist/fancybox.css'),
+	]).then(function (modules) {
+		var Fancybox = modules[0].Fancybox;
+		Fancybox.bind('[data-fancybox="gallery"]', {
+			Toolbar: false,
+			animated: false,
+			dragToClose: false,
+			showClass: false,
+			hideClass: false,
+			closeButton: 'top',
+			Image: {
+				click: 'close',
+				wheel: 'slide',
+				zoom: false,
+				fit: 'cover',
+			},
+			Thumbs: {
+				minScreenHeight: 0,
+			},
+		});
 	});
 });

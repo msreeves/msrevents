@@ -8,14 +8,16 @@
 </head>
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
-	<a class="events-skip-link" href="#site-content"><?php esc_html_e( 'Skip to content', 'msrevents' ); ?></a>
+	<a class="msr-skip-link" href="#site-content"><?php esc_html_e( 'Skip to content', 'msrevents' ); ?></a>
+	<script>document.documentElement.classList.add('js-reveal');</script>
+	<noscript><style>.msr-reveal{opacity:1!important;transform:none!important;transition:none!important}</style></noscript>
 	<?php
 	if ( function_exists( 'msrevents_show_leaderboard_ads' ) && msrevents_show_leaderboard_ads() ) {
 		get_template_part( 'templates/partials/leaderboard/header' );
 	}
 	?>
 	<header id="masthead" class="site-header">
-    <nav class="navbar navbar-expand-lg navbar-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark" aria-label="<?php esc_attr_e( 'Primary', 'msrevents' ); ?>">
         <div class="container-fluid events-navbar__inner d-flex align-items-center flex-wrap">
               <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>">
                 <?php
@@ -34,18 +36,15 @@
 				);
 			}
 			?></a>
-             <button class="events-header-search__toggle btn btn-link text-white d-lg-none order-2" type="button" data-bs-toggle="collapse" data-bs-target="#eventsHeaderSearch" aria-controls="eventsHeaderSearch" aria-expanded="false" data-msr-header-search-toggle aria-label="<?php esc_attr_e( 'Search the hub', 'msrevents' ); ?>">
-          <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
-        </button>
-             <button class="navbar-toggler collapsed ms-auto d-lg-none order-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#msrEventsMobileNav"
-          aria-controls="msrEventsMobileNav" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'msrevents' ); ?>">
+             <button class="navbar-toggler collapsed ms-auto d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#site-header-mobile-nav"
+          aria-controls="site-header-mobile-nav" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'msrevents' ); ?>">
           <span class="icon-bar top-bar"></span>
           <span class="icon-bar middle-bar"></span>
           <span class="icon-bar bottom-bar"></span>
         </button>
-        <div class="offcanvas offcanvas-end msr-events-mobile-nav ms-lg-auto" tabindex="-1" id="msrEventsMobileNav" aria-labelledby="msrEventsMobileNavLabel">
+        <div class="offcanvas offcanvas-end site-header__mobile-nav ms-lg-auto" tabindex="-1" id="site-header-mobile-nav" aria-labelledby="site-header-mobile-nav-label">
 			<div class="offcanvas-header d-lg-none">
-				<p class="offcanvas-title h6 mb-0" id="msrEventsMobileNavLabel"><?php esc_html_e( 'Menu', 'msrevents' ); ?></p>
+				<p class="offcanvas-title h6 mb-0" id="site-header-mobile-nav-label"><?php esc_html_e( 'Menu', 'msrevents' ); ?></p>
 				<button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="<?php esc_attr_e( 'Close', 'msrevents' ); ?>"></button>
 			</div>
 			<div class="offcanvas-body">
@@ -56,7 +55,10 @@
 							array(
 								'theme_location' => 'menu-1',
 								'menu_id'        => 'primary-menu',
+								'menu_class'     => 'events-nav__list menu',
+								'container'      => 'div',
 								'container_id'   => 'cssmenu',
+								'container_class'=> 'events-nav menu-header-container',
 								'walker'         => new CSS_Menu_Walker(),
 								'fallback_cb'    => 'msrevents_primary_menu_fallback',
 							)
@@ -69,24 +71,21 @@
 						<?php msr_render_primary_cta(); ?>
 					<?php endif; ?>
 				</div>
+				<div class="events-header-search events-header-search--offcanvas d-lg-none mt-3 pt-3">
+					<?php
+					get_template_part(
+						'template-parts/forms/site-search',
+						null,
+						array(
+							'input_id' => 'msr-events-header-search',
+							'compact'  => true,
+						)
+					);
+					?>
+				</div>
 			</div>
         </div>
         </div>
-		<div id="eventsHeaderSearch" class="collapse events-header-search d-lg-none">
-			<div class="container-fluid py-2">
-				<?php
-				get_template_part(
-					'template-parts/forms/site-search',
-					null,
-					array(
-						'input_id' => 'msr-events-header-search',
-						'compact'  => true,
-					)
-				);
-				?>
-			</div>
-		</div>
     </nav>
 	</header>
 
-    

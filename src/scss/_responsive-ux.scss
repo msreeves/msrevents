@@ -12,8 +12,7 @@
 }
 
 @include media('<=tablet') {
-	header .navbar-toggler,
-	.events-header-search__toggle {
+	header .navbar-toggler {
 		box-sizing: border-box;
 		width: 2.75rem;
 		height: 2.75rem;

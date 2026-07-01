@@ -64,11 +64,12 @@
 		}
 	}
 
-	&__time {
+	&__time,
+	time {
 		font-family: $header-text;
 		font-size: 0.8125rem;
 		font-weight: 600;
-		color: $accent-light;
+		color: $text-primary;
 	}
 
 	&__session {

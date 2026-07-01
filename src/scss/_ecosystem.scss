@@ -1,5 +1,5 @@
 // Outbound MSR ecosystem band (hub, publishing, ceremony)
-.events-ecosystem {
+.msr-ecosystem {
 	background: linear-gradient(180deg, $surface-high 0%, $surface 100%);
 	border-top: 1px solid $border-mid;
 	border-bottom: 1px solid $border-mid;
@@ -41,25 +41,25 @@
 	}
 
 	.btn-outline-primary {
-		color: $primary;
-		border-color: $primary;
+		color: $text-primary;
+		border-color: $accent-light;
 
 		&:hover,
 		&:focus-visible {
-			background-color: $primary;
-			border-color: $primary;
-			color: $bg-dark;
+			background-color: $accent;
+			border-color: $accent;
+			color: $text-primary;
 		}
 	}
 }
 
-body.msr-awards section.events-ecosystem {
+body.msr-events section.msr-ecosystem {
 	padding-top: 2.5rem;
 	padding-bottom: 2.5rem;
 }
 
 @include media('<=phone') {
-	.events-ecosystem {
+	.msr-ecosystem {
 		padding: 2rem 0;
 
 		&__card .btn {
