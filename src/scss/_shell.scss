@@ -30,6 +30,7 @@
 		margin-right: 0;
 		padding: 0;
 		max-width: none;
+		order: 1;
 
 		img.custom-logo {
 			display: block;
@@ -40,19 +41,8 @@
 	}
 
 	.navbar-toggler {
+		order: 3;
 		margin-left: auto;
-
-		@include media('<=tablet') {
-			width: 2.75rem;
-			height: 2.75rem;
-			min-width: 2.75rem;
-			min-height: 2.75rem;
-			padding: 0;
-			display: inline-flex;
-			align-items: center;
-			justify-content: center;
-			flex-shrink: 0;
-		}
 	}
 
 	.site-header__mobile-nav.offcanvas {

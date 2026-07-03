@@ -51,21 +51,22 @@ header {
 				}
 			}
 
-			&:not(.collapsed) {
-				span {
-					&:nth-child(1) {
-						transform: translate(15%, -33%) rotate(45deg);
-					}
+		&:not(.collapsed),
+		&[aria-expanded='true'] {
+			span {
+				&:nth-child(1) {
+					transform: translate(15%, -33%) rotate(45deg);
+				}
 
-					&:nth-child(2) {
-						opacity: 0;
-					}
+				&:nth-child(2) {
+					opacity: 0;
+				}
 
-					&:nth-child(3) {
-						transform: translate(15%, 33%) rotate(-45deg);
-					}
+				&:nth-child(3) {
+					transform: translate(15%, 33%) rotate(-45deg);
 				}
 			}
+		}
 		}
 
 		.site-header__mobile-nav {
