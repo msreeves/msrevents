@@ -196,6 +196,11 @@ function msrevents_render_event_mini_agenda( $post_id = 0 ) {
 		<a class="btn btn-outline-primary events-event-mini-agenda__link" href="<?php echo esc_url( $archive_url ); ?>">
 			<?php esc_html_e( 'View full programme', 'msrevents' ); ?>
 		</a>
+		<?php
+		if ( function_exists( 'msrevents_render_companion_mini_agenda_note' ) ) {
+			msrevents_render_companion_mini_agenda_note( $post_id );
+		}
+		?>
 	</section>
 	<?php
 }

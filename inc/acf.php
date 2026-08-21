@@ -190,3 +190,47 @@ function msrevents_register_acf_options_fields() {
 	);
 }
 add_action( 'acf/init', 'msrevents_register_acf_options_fields' );
+
+/**
+ * Companion demo fields on hub event posts (A3-hub).
+ *
+ * @return void
+ */
+function msrevents_register_acf_companion_fields() {
+	if ( ! function_exists( 'acf_add_local_field_group' ) ) {
+		return;
+	}
+
+	acf_add_local_field_group(
+		array(
+			'key'    => 'group_msr_events_companion',
+			'title'  => 'Event companion demo',
+			'fields' => array(
+				array(
+					'key'          => 'field_msr_evt_companion_demo_url',
+					'label'        => 'Companion demo URL',
+					'name'         => 'companion_demo_url',
+					'type'         => 'url',
+					'instructions' => 'Link-out to the React companion SPA (local or production).',
+				),
+				array(
+					'key'          => 'field_msr_evt_booking_url',
+					'label'        => 'Booking URL',
+					'name'         => 'booking_url',
+					'type'         => 'text',
+					'instructions' => 'Same Register target as the companion app (URL or mailto).',
+				),
+			),
+			'location' => array(
+				array(
+					array(
+						'param'    => 'post_type',
+						'operator' => '==',
+						'value'    => 'event',
+					),
+				),
+			),
+		)
+	);
+}
+add_action( 'acf/init', 'msrevents_register_acf_companion_fields' );

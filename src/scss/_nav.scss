@@ -69,11 +69,15 @@ body.msr-events .site-header {
 		color: $accent-light;
 	}
 
+	// Square SVG chevron — avoid FA webfont at tiny font-size (looks squashed in flex).
 	.events-nav__chevron {
-		font-size: 0.6rem;
-		opacity: 0.75;
-		line-height: 1;
+		display: block;
+		flex-shrink: 0;
+		width: 0.75rem;
+		height: 0.75rem;
+		opacity: 0.8;
 		transition: transform 0.2s ease;
+		transform-origin: center;
 	}
 
 	.events-nav__toggle {

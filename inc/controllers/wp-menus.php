@@ -112,23 +112,28 @@ class CSS_Menu_Walker extends Walker {
 			$item_output .= '<div class="events-nav__row">';
 		}
 
+		// Inline SVG keeps a square aspect ratio; FA webfont at sub-rem size looks squashed in flex.
+		$chevron = '<svg class="events-nav__chevron" width="12" height="12" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M3.2 5.4a.75.75 0 0 1 1.06 0L8 9.14l3.74-3.74a.75.75 0 1 1 1.06 1.06l-4.27 4.27a.75.75 0 0 1-1.06 0L3.2 6.46a.75.75 0 0 1 0-1.06z"/></svg>';
+
 		$item_output .= '<a class="' . esc_attr( $link_class ) . '"' . $attributes . '><span>';
 		$item_output .= $link_before . esc_html( $title ) . $link_after;
+		$item_output .= '</span>';
 		if ( $has_children && 0 === $depth ) {
-			$item_output .= '<i class="fa-solid fa-chevron-down events-nav__chevron" aria-hidden="true"></i>';
+			$item_output .= $chevron;
 		}
-		$item_output .= '</span></a>';
+		$item_output .= '</a>';
 
 		if ( $has_children && 0 === $depth ) {
 			$item_output .= sprintf(
-				'<button type="button" class="events-nav__toggle" aria-expanded="false" aria-label="%s"><i class="fa-solid fa-chevron-down events-nav__chevron" aria-hidden="true"></i></button></div>',
+				'<button type="button" class="events-nav__toggle" aria-expanded="false" aria-label="%s">%s</button></div>',
 				esc_attr(
 					sprintf(
 						/* translators: %s: parent menu item title */
 						__( 'Show submenu for %s', 'msrevents' ),
 						$title
 					)
-				)
+				),
+				$chevron
 			);
 		}
 

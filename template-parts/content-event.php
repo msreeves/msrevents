@@ -63,6 +63,11 @@ if ( ! is_array( $venue ) ) {
 				<div class="d-flex flex-wrap justify-content-center gap-2 mb-3">
 					<?php msrevents_render_cta_link( get_field( 'link1', $post_id ) ); ?>
 					<?php msrevents_render_cta_link( get_field( 'link2', $post_id ), 'btn btn-outline-primary' ); ?>
+					<?php
+					if ( function_exists( 'msrevents_render_companion_cta_button' ) ) {
+						msrevents_render_companion_cta_button( $post_id );
+					}
+					?>
 				</div>
 				<?php msrevents_render_event_calendar_demo( $post_id ); ?>
 			</div>

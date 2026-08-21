@@ -53,7 +53,7 @@ function msrevents_get_programme_stats() {
  * Featured hub events for home.
  *
  * @param int $limit Max cards.
- * @return array<int, array{title: string, meta: string, url: string, post_id: int, date_iso: string}>
+ * @return array<int, array{title: string, meta: string, url: string, post_id: int, date_iso: string, summary: string}>
  */
 function msrevents_get_featured_events( $limit = 3 ) {
 	$query = new WP_Query(
@@ -64,7 +64,7 @@ function msrevents_get_featured_events( $limit = 3 ) {
 			'orderby'                => 'date',
 			'order'                  => 'DESC',
 			'no_found_rows'          => true,
-			'update_post_meta_cache' => false,
+			'update_post_meta_cache' => true,
 			'update_post_term_cache' => false,
 		)
 	);
@@ -73,12 +73,14 @@ function msrevents_get_featured_events( $limit = 3 ) {
 	if ( $query->have_posts() ) {
 		while ( $query->have_posts() ) {
 			$query->the_post();
+			$raw = has_excerpt() ? get_the_excerpt() : wp_strip_all_tags( (string) get_the_content( null, false ) );
 			$items[] = array(
 				'title'    => get_the_title(),
 				'meta'     => get_the_date(),
 				'date_iso' => get_the_date( 'c' ),
 				'url'      => get_permalink(),
 				'post_id'  => get_the_ID(),
+				'summary'  => $raw ? wp_trim_words( $raw, 28, '…' ) : '',
 			);
 		}
 		wp_reset_postdata();
@@ -170,37 +172,40 @@ function msrevents_render_featured_events() {
 	?>
 	<section class="events-featured-events msr-reveal" aria-labelledby="events-featured-events-heading">
 		<div class="container">
-			<header class="events-featured-events__header text-center mb-4">
+			<header class="events-featured-events__header text-center">
 				<h2 id="events-featured-events-heading" class="h4 events-featured-events__title mb-2">
 					<?php esc_html_e( 'Featured events', 'msrevents' ); ?>
 				</h2>
 				<p class="events-featured-events__lead mb-0">
 					<?php esc_html_e( 'A sample of programme listings from the seeded hub archive — swap for live season picks before launch.', 'msrevents' ); ?>
 				</p>
+				<?php if ( $archive_url ) : ?>
+				<div class="events-featured-events__cta events-ctas">
+					<a class="btn btn-outline-primary events-featured-events__archive-btn" href="<?php echo esc_url( $archive_url ); ?>"><?php esc_html_e( 'Browse all events', 'msrevents' ); ?></a>
+				</div>
+				<?php endif; ?>
 			</header>
 			<ul class="events-featured-events__grid list-unstyled mb-0">
 				<?php foreach ( $events as $event ) : ?>
 				<li class="events-featured-events__item panel">
-					<div class="events-featured-events__card">
+					<article class="events-featured-events__card">
 						<a class="events-featured-events__card-link" href="<?php echo esc_url( $event['url'] ); ?>">
-							<h3 class="h6 events-featured-events__event-title mb-1"><?php echo esc_html( $event['title'] ); ?></h3>
+							<h3 class="h6 events-featured-events__event-title mb-0"><?php echo esc_html( $event['title'] ); ?></h3>
 						</a>
 						<?php if ( ! empty( $event['post_id'] ) && function_exists( 'msrevents_render_event_meta_chips' ) ) : ?>
-							<?php msrevents_render_event_meta_chips( (int) $event['post_id'] ); ?>
+							<?php msrevents_render_event_meta_chips( (int) $event['post_id'], 'events-featured-events__chips' ); ?>
 						<?php elseif ( ! empty( $event['meta'] ) ) : ?>
 						<p class="small events-featured-events__meta mb-0">
 							<time datetime="<?php echo esc_attr( $event['date_iso'] ); ?>"><?php echo esc_html( $event['meta'] ); ?></time>
 						</p>
 						<?php endif; ?>
-					</div>
+						<?php if ( ! empty( $event['summary'] ) ) : ?>
+						<p class="events-featured-events__summary mb-0"><?php echo esc_html( $event['summary'] ); ?></p>
+						<?php endif; ?>
+					</article>
 				</li>
 				<?php endforeach; ?>
 			</ul>
-			<?php if ( $archive_url ) : ?>
-			<div class="events-featured-events__cta events-ctas">
-				<a class="btn btn-outline-primary events-featured-events__archive-btn" href="<?php echo esc_url( $archive_url ); ?>"><?php esc_html_e( 'Browse all events', 'msrevents' ); ?></a>
-			</div>
-			<?php endif; ?>
 		</div>
 	</section>
 	<?php

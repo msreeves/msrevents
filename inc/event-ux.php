@@ -247,10 +247,11 @@ function msrevents_get_event_days_until_start( $post_id = 0 ) {
 /**
  * Render date + format meta chips.
  *
- * @param int $post_id Event post ID.
+ * @param int    $post_id     Event post ID.
+ * @param string $extra_class Optional extra class on the list (e.g. featured card layout).
  * @return void
  */
-function msrevents_render_event_meta_chips( $post_id = 0 ) {
+function msrevents_render_event_meta_chips( $post_id = 0, $extra_class = '' ) {
 	$post_id    = $post_id ? (int) $post_id : (int) get_the_ID();
 	$date_label = msrevents_get_event_date_chip_label( $post_id );
 	$format     = msrevents_get_event_format_label( $post_id );
@@ -258,10 +259,16 @@ function msrevents_render_event_meta_chips( $post_id = 0 ) {
 	if ( '' === $date_label && '' === $format ) {
 		return;
 	}
+
+	$list_class = 'events-event-meta-chips list-unstyled mb-0';
+	$extra      = trim( (string) $extra_class );
+	if ( '' !== $extra ) {
+		$list_class .= ' ' . preg_replace( '/[^A-Za-z0-9_\-\s]/', '', $extra );
+	}
 	?>
-	<ul class="events-event-meta-chips list-unstyled d-flex flex-wrap justify-content-center gap-2 mb-3" role="list">
+	<ul class="<?php echo esc_attr( $list_class ); ?>" role="list">
 		<?php if ( $date_label ) : ?>
-		<li>
+		<li class="events-event-meta-chips__item">
 			<span class="events-event-chip events-event-chip--date">
 				<i class="fa-solid fa-calendar" aria-hidden="true"></i>
 				<span><?php echo esc_html( $date_label ); ?></span>
@@ -269,7 +276,7 @@ function msrevents_render_event_meta_chips( $post_id = 0 ) {
 		</li>
 		<?php endif; ?>
 		<?php if ( $format ) : ?>
-		<li>
+		<li class="events-event-meta-chips__item">
 			<span class="events-event-chip events-event-chip--format">
 				<i class="fa-solid fa-location-dot" aria-hidden="true"></i>
 				<span><?php echo esc_html( $format ); ?></span>

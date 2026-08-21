@@ -119,6 +119,20 @@
 	}
 }
 
+.events-companion-cta {
+	min-height: 2.75rem;
+}
+
+.events-companion-mini-note {
+	color: $text-secondary;
+
+	a {
+		font-weight: 600;
+		color: $accent;
+		text-underline-offset: 0.15em;
+	}
+}
+
 @include media('<=tablet') {
 	.events-event-mini-agenda__item {
 		grid-template-columns: 1fr;

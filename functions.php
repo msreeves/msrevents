@@ -26,6 +26,7 @@ require_once get_template_directory() . '/inc/perf.php';
 require_once get_template_directory() . '/inc/event-ux.php';
 require_once get_template_directory() . '/inc/archive.php';
 require_once get_template_directory() . '/inc/single.php';
+require_once get_template_directory() . '/inc/companion.php';
 require_once get_template_directory() . '/inc/about.php';
 require_once get_template_directory() . '/inc/routes.php';
 require_once get_template_directory() . '/inc/sections.php';
