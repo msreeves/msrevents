@@ -1,0 +1,46 @@
+// Event Companion demo promo — archive / featured (C1d)
+
+.events-companion-band {
+	margin: 1.5rem 0 1.75rem;
+	padding: 0;
+
+	&__inner {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-between;
+		gap: 1.25rem;
+		padding: 1.25rem 1.5rem;
+		background: linear-gradient(120deg, rgba($accent, 0.14) 0%, $surface-mid 55%);
+		border: 1px solid rgba($accent, 0.28);
+		border-radius: 2px;
+	}
+
+	&__eyebrow {
+		font-size: 0.75rem;
+		font-weight: 700;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		color: $accent-light;
+	}
+
+	&__title {
+		font-family: $display-text;
+		color: $text-primary;
+	}
+
+	&__lead {
+		max-width: 36rem;
+		color: $text-secondary;
+		font-size: 0.9375rem;
+	}
+
+	&__actions .btn {
+		min-height: 2.75rem;
+	}
+}
+
+.events-companion-featured-cta,
+.events-companion-picker-cta {
+	min-height: 2.75rem;
+}

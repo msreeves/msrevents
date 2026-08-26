@@ -160,6 +160,7 @@ function msrevents_render_programme_stats() {
 
 /**
  * Featured events band for programme home.
+ * Composition kit: S-featured · R2 (header) · R3 (CTA pair) · R4 (cards) · R5 (chips) · R9 (section pad).
  *
  * @return void
  */
@@ -170,20 +171,25 @@ function msrevents_render_featured_events() {
 	}
 	$archive_url = msrevents_get_page_url( 'our-events', '/our-events/' );
 	?>
-	<section class="events-featured-events msr-reveal" aria-labelledby="events-featured-events-heading">
+	<section class="events-featured-events msr-reveal" aria-labelledby="events-featured-events-heading" data-msr-section="S-featured">
 		<div class="container">
 			<header class="events-featured-events__header text-center">
-				<h2 id="events-featured-events-heading" class="h4 events-featured-events__title mb-2">
+				<h2 id="events-featured-events-heading" class="h4 events-featured-events__title">
 					<?php esc_html_e( 'Featured events', 'msrevents' ); ?>
 				</h2>
-				<p class="events-featured-events__lead mb-0">
+				<p class="events-featured-events__lead">
 					<?php esc_html_e( 'A sample of programme listings from the seeded hub archive — swap for live season picks before launch.', 'msrevents' ); ?>
 				</p>
-				<?php if ( $archive_url ) : ?>
 				<div class="events-featured-events__cta events-ctas">
-					<a class="btn btn-outline-primary events-featured-events__archive-btn" href="<?php echo esc_url( $archive_url ); ?>"><?php esc_html_e( 'Browse all events', 'msrevents' ); ?></a>
+					<?php if ( $archive_url ) : ?>
+					<a class="btn btn-primary events-featured-events__archive-btn" href="<?php echo esc_url( $archive_url ); ?>"><?php esc_html_e( 'Browse all events', 'msrevents' ); ?></a>
+					<?php endif; ?>
+					<?php
+					if ( function_exists( 'msrevents_render_companion_featured_link' ) ) {
+						msrevents_render_companion_featured_link();
+					}
+					?>
 				</div>
-				<?php endif; ?>
 			</header>
 			<ul class="events-featured-events__grid list-unstyled mb-0">
 				<?php foreach ( $events as $event ) : ?>

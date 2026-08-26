@@ -1,12 +1,13 @@
 // S10 — event meta chips, calendar demo, countdown, sticky mobile CTA
 
+// R5 — chip row: wrap, hug content, tight gaps (not full-width stacked buttons)
 .events-event-meta-chips {
 	display: flex;
 	flex-flow: row wrap;
 	align-items: center;
 	justify-content: flex-start;
-	gap: 0.5rem;
-	margin-top: 0.5rem;
+	gap: var(--msr-stack-gap-tight);
+	margin-top: 0;
 
 	&__item {
 		flex: 0 1 auto;
@@ -160,14 +161,14 @@ body.msr-events.msr-events-single--sticky-cta {
 }
 
 .events-featured-events {
-	// Chip set = flex row + wrap (not a column “bullet list”)
+	// R5 — chip set = flex row + wrap (not a column “bullet list”)
 	&__chips {
 		display: flex;
 		flex-flow: row wrap;
 		align-items: center;
 		justify-content: flex-start;
-		gap: 0.5rem;
-		margin-top: 0.75rem;
+		gap: var(--msr-stack-gap-tight);
+		margin-top: 0;
 		margin-bottom: 0;
 	}
 

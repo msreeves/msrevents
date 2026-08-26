@@ -75,9 +75,13 @@ $pagination-active-bg:  $accent;
 $pagination-active-color: $bg-dark;
 
 // --- Layout tokens ---
+// Composition kit (Pilot A): semantic stack gaps mirror portfolio — see docs/reference/composition/recipes.md
 :root {
 	--msr-content-max: 72rem;
 	--msr-section-y: clamp(2.5rem, 5vw, 5rem);
+	--msr-stack-gap: clamp(1rem, 2.4vw, 1.5rem); // related / group (siblings in a band)
+	--msr-stack-gap-tight: clamp(0.75rem, 2vw, 1rem); // tight (chip/card inner)
+	--msr-grid-gap: var(--msr-stack-gap); // card↔card / CTA pair
 	--msr-radius: 2px;
 
 	--msr-accent: #{$accent};

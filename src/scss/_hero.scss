@@ -67,11 +67,12 @@
 		text-align: center;
 	}
 
+	// R1 — eyebrow → H1 → lead → CTA; gaps = related / group via stack tokens
 	&__eyebrow {
 		display: inline-flex;
 		align-items: center;
 		gap: 0.5rem;
-		margin: 0 0 1rem;
+		margin: 0 0 var(--msr-stack-gap-tight);
 		padding: 0.35rem 0.85rem;
 		font-family: $body-text;
 		font-size: 0.6875rem;
@@ -95,7 +96,7 @@
 	}
 
 	h1 {
-		margin: 0 0 0.85rem;
+		margin: 0 0 var(--msr-stack-gap-tight);
 		font-family: $display-text;
 		font-size: clamp(2.1rem, 5.5vw, 3.5rem);
 		font-weight: 700;
@@ -107,7 +108,7 @@
 	}
 
 	&__lead {
-		margin: 0 0 1.25rem;
+		margin: 0 0 var(--msr-stack-gap);
 		font-family: $display-text;
 		font-size: clamp(1.1rem, 2.4vw, 1.45rem);
 		font-weight: 600;
@@ -115,12 +116,13 @@
 		color: rgba($text-primary, 0.94);
 	}
 
+	// R5 — fact chips wrap; chip↔chip = tight
 	&__facts {
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
-		gap: 0.5rem 0.65rem;
-		margin: 0 0 1.5rem;
+		gap: var(--msr-stack-gap-tight);
+		margin: 0 0 var(--msr-stack-gap);
 		padding: 0;
 		list-style: none;
 	}
@@ -164,14 +166,15 @@
 		}
 	}
 
+	// R3 — CTA pair gap = group
 	.events-ctas,
 	.ctas {
-		margin-top: 0.25rem;
+		margin-top: 0;
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
 		align-items: center;
-		gap: 0.65rem;
+		gap: var(--msr-grid-gap);
 	}
 
 	.btn-primary {

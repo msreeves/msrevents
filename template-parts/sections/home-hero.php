@@ -1,6 +1,7 @@
 <?php
 /**
  * Programme home hero — image, scrim, facts, CTAs.
+ * Composition kit: S-hero · R1 (stack) · R3 (CTA pair) · R5 (fact chips).
  *
  * @package msrevents
  */

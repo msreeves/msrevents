@@ -20,6 +20,11 @@ $filtered_events = msrevents_query_filtered_events( $archive_state );
 			</p>
 		</header>
 		<?php msrevents_render_programme_lifecycle_band(); ?>
+		<?php
+		if ( function_exists( 'msrevents_render_companion_archive_band' ) ) {
+			msrevents_render_companion_archive_band();
+		}
+		?>
 		<?php msrevents_render_events_archive_filters( $archive_state, count( $filtered_events ) ); ?>
 		<?php get_template_part( 'template-parts/forms/site-search' ); ?>
 		<?php msrevents_render_events_archive_listing( $archive_state, $filtered_events ); ?>

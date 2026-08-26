@@ -1,13 +1,14 @@
 // Portfolio demonstration — stats strip, featured events, CTA preview
+// Composition kit Pilot A (hub): featured = R2 + R3 + R4 + R5 + R9; hero helpers = R1/R5
 
 .events-programme-stats {
-	padding: 1.75rem 0;
+	padding: var(--msr-stack-gap) 0;
 	background: linear-gradient(180deg, rgba($surface-high, 0.55) 0%, $surface 100%);
 	border-bottom: 1px solid $border-mid;
 
 	&__list {
 		display: grid;
-		gap: 1rem;
+		gap: var(--msr-grid-gap);
 		grid-template-columns: repeat(2, minmax(0, 1fr));
 
 		@include media('>=tablet') {
@@ -17,7 +18,7 @@
 
 	&__item {
 		text-align: center;
-		padding: 1rem 0.75rem;
+		padding: var(--msr-stack-gap-tight) 0.75rem;
 		background: rgba($surface-mid, 0.85);
 		border: 1px solid rgba($accent, 0.22);
 		border-radius: 2px;
@@ -41,40 +42,47 @@
 	}
 }
 
+// S-featured — R2 header → R3 CTA pair → R4 card grid; outer pad R9
 .events-featured-events {
-	padding: 2.5rem 0;
+	padding: var(--msr-section-y) 0;
 	background: $surface;
 
 	&__header {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 		max-width: 40rem;
 		margin-inline: auto;
-		margin-bottom: 1.75rem;
+		margin-bottom: var(--msr-stack-gap); // header→body = group
+		gap: var(--msr-stack-gap-tight); // H2→lede = related (tight end of related)
 	}
 
 	&__title {
+		margin: 0;
 		font-family: $display-text;
 		color: $text-primary;
 	}
 
 	&__lead {
+		margin: 0;
 		color: $text-secondary;
 		max-width: 38rem;
-		margin-inline: auto;
 	}
 
+	// R3 — primary fill + outline secondary; gap = group
 	&__cta {
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
 		align-items: center;
-		gap: 0.75rem;
-		margin: 1.15rem 0 0;
+		gap: var(--msr-grid-gap);
+		margin: 0;
 		padding: 0;
 	}
 
 	&__grid {
 		display: grid;
-		gap: 1rem;
+		gap: var(--msr-grid-gap); // card↔card = group
 
 		@include media('>=tablet') {
 			grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -82,16 +90,18 @@
 	}
 
 	&__item {
+		min-width: 0;
 		height: 100%;
 		padding: 0;
 		background: $surface-mid;
 		border: 1px solid $border-mid;
 	}
 
+	// R4 — title → meta → summary; inner stack < card gap
 	&__card {
 		display: flex;
 		flex-direction: column;
-		gap: 0.65rem;
+		gap: var(--msr-stack-gap-tight);
 		padding: 1.25rem;
 		height: 100%;
 	}
@@ -131,6 +141,21 @@
 		display: inline-flex;
 		align-items: center;
 	}
+
+	// Primary weight for archive CTA (R3)
+	.btn-primary {
+		color: $white;
+		background-color: $accent;
+		border-color: $accent;
+
+		&:hover,
+		&:focus,
+		&:focus-visible {
+			color: $white;
+			background-color: $accent-light;
+			border-color: $accent-light;
+		}
+	}
 }
 
 .msr-primary-cta--events {
@@ -161,7 +186,7 @@
 		display: inline-flex;
 		align-items: center;
 		gap: 0.35rem;
-		margin: 0 0 1rem;
+		margin: 0 0 var(--msr-stack-gap-tight);
 		padding: 0.45rem 0.9rem;
 		font-size: 0.8125rem;
 		font-weight: 600;

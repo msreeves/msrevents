@@ -23,7 +23,7 @@
 	}
 
 	.events-featured-events {
-		padding: 2rem 0;
+		padding: calc(var(--msr-section-y, 5rem) * 0.75) 0;
 
 		&__card {
 			padding: 1rem 1.15rem;
@@ -89,11 +89,11 @@
 	}
 
 	.events-programme-stats__list {
-		gap: 0.75rem;
+		gap: var(--msr-stack-gap-tight);
 	}
 
 	.events-featured-events__grid {
-		gap: 0.75rem;
+		gap: var(--msr-stack-gap-tight);
 	}
 
 	.events-archive-filters__heading {
