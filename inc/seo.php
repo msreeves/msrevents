@@ -8,6 +8,70 @@
  */
 
 /**
+ * Whether copy looks like Latin / lorem placeholder (not programme meta).
+ *
+ * @param string $text Plain text.
+ * @return bool
+ */
+function msrevents_seo_is_placeholder_copy( $text ) {
+	$text = strtolower( trim( wp_strip_all_tags( $text ) ) );
+	if ( '' === $text ) {
+		return true;
+	}
+
+	$patterns = array(
+		'lorem ipsum',
+		'class aptent taciti',
+		'dolor sit amet',
+		'ut et neque lacus',
+		'in et arcu eu dui',
+		'nulla consequat et mas',
+	);
+
+	foreach ( $patterns as $pattern ) {
+		if ( str_contains( $text, $pattern ) ) {
+			return true;
+		}
+	}
+
+	return false;
+}
+
+/**
+ * Normalise and trim a meta description string.
+ *
+ * @param string $description Raw description.
+ * @return string
+ */
+function msrevents_seo_normalize_description( $description ) {
+	$description = wp_strip_all_tags( (string) $description );
+	$description = strip_shortcodes( $description );
+	$description = preg_replace( '/\s+/', ' ', $description );
+	$description = trim( (string) $description );
+
+	if ( '' === $description || msrevents_seo_is_placeholder_copy( $description ) ) {
+		return '';
+	}
+
+	return mb_substr( $description, 0, 300, 'UTF-8' );
+}
+
+/**
+ * Curated meta descriptions for programme pages (slug-keyed).
+ *
+ * @return array<string, string>
+ */
+function msrevents_seo_curated_page_descriptions() {
+	return array(
+		'partners'     => __( 'Meet sponsors and partners supporting MSR Events programmes and portfolio demonstrations.', 'msrevents' ),
+		'for-planners' => __( 'Planning resources and journey overview for MSR Events programme hosts and planners.', 'msrevents' ),
+		'about-us'     => __( 'About MSR Events — demonstration multisite hub for awards, seminars, and programme routing.', 'msrevents' ),
+		'publications' => __( 'MSR Events publications and editorial resources from the events hub.', 'msrevents' ),
+		'podcasts'     => __( 'Listen to MSR Events programme podcasts and editorial audio.', 'msrevents' ),
+	);
+}
+
+/**
  * Front-end routes that use hub SEO output.
  *
  * @return bool
@@ -99,64 +163,79 @@ function msrevents_seo_title() {
  * @return string
  */
 function msrevents_seo_description() {
+	$description = '';
+
 	if ( is_front_page() || is_home() ) {
-		$desc = get_bloginfo( 'description', 'display' );
-		if ( $desc !== '' ) {
-			return $desc;
+		$description = msrevents_seo_normalize_description( (string) get_bloginfo( 'description', 'display' ) );
+		if ( '' === $description ) {
+			$description = msrevents_seo_normalize_description( msrevents_get_seo_home_description() );
 		}
-		return msrevents_get_seo_home_description();
+		return $description;
 	}
 
 	if ( is_singular( 'event' ) ) {
 		$post_id = get_the_ID();
-		$excerpt = get_the_excerpt( $post_id );
-		if ( $excerpt !== '' ) {
-			return wp_strip_all_tags( $excerpt );
+		$description = msrevents_seo_normalize_description( get_the_excerpt( $post_id ) );
+		if ( '' === $description && function_exists( 'msrevents_get_lifecycle_phase_description' ) && function_exists( 'msrevents_get_event_lifecycle_phase' ) ) {
+			$description = msrevents_seo_normalize_description(
+				msrevents_get_lifecycle_phase_description( msrevents_get_event_lifecycle_phase() )
+			);
 		}
-		if ( function_exists( 'msrevents_get_lifecycle_phase_description' ) && function_exists( 'msrevents_get_event_lifecycle_phase' ) ) {
-			$phase_copy = msrevents_get_lifecycle_phase_description( msrevents_get_event_lifecycle_phase() );
-			if ( $phase_copy !== '' ) {
-				return $phase_copy;
-			}
+		if ( '' !== $description ) {
+			return $description;
 		}
 	}
 
 	if ( is_singular() ) {
-		$excerpt = get_the_excerpt();
-		if ( $excerpt !== '' ) {
-			return wp_strip_all_tags( $excerpt );
-		}
-		$content = get_post_field( 'post_content', get_the_ID() );
-		$trimmed = wp_trim_words( wp_strip_all_tags( (string) $content ), 40, '…' );
-		if ( $trimmed !== '' ) {
-			return $trimmed;
+		global $post;
+		if ( $post instanceof WP_Post ) {
+			$description = msrevents_seo_normalize_description( $post->post_excerpt );
+			if ( '' === $description ) {
+				$trimmed = wp_trim_words( wp_strip_all_tags( (string) $post->post_content ), 40, '…' );
+				$description = msrevents_seo_normalize_description( $trimmed );
+			}
+			if ( '' !== $description ) {
+				return $description;
+			}
 		}
 	}
 
 	if ( is_post_type_archive( 'event' ) ) {
-		return msrevents_get_seo_events_archive_description();
+		return msrevents_seo_normalize_description( msrevents_get_seo_events_archive_description() );
 	}
 
 	if ( is_category() ) {
-		$description = category_description();
-		if ( $description !== '' ) {
-			return wp_strip_all_tags( $description );
+		$description = msrevents_seo_normalize_description( (string) category_description() );
+		if ( '' !== $description ) {
+			return $description;
 		}
 	}
 
 	if ( is_search() ) {
-		return msrevents_get_seo_search_description();
+		return msrevents_seo_normalize_description( msrevents_get_seo_search_description() );
 	}
 
 	if ( is_page() ) {
-		$content = get_post_field( 'post_content', get_the_ID() );
-		$trimmed = wp_trim_words( wp_strip_all_tags( (string) $content ), 40, '…' );
-		if ( $trimmed !== '' ) {
-			return $trimmed;
+		global $post;
+		if ( $post instanceof WP_Post ) {
+			$description = msrevents_seo_normalize_description( $post->post_excerpt );
+			if ( '' === $description ) {
+				$curated = msrevents_seo_curated_page_descriptions();
+				$slug    = sanitize_title( (string) $post->post_name );
+				if ( isset( $curated[ $slug ] ) ) {
+					$description = msrevents_seo_normalize_description( $curated[ $slug ] );
+				} else {
+					$trimmed = wp_trim_words( wp_strip_all_tags( (string) $post->post_content ), 40, '…' );
+					$description = msrevents_seo_normalize_description( $trimmed );
+				}
+			}
+			if ( '' !== $description ) {
+				return $description;
+			}
 		}
 	}
 
-	return get_bloginfo( 'description', 'display' );
+	return msrevents_seo_normalize_description( (string) get_bloginfo( 'description', 'display' ) );
 }
 
 /**

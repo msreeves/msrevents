@@ -175,3 +175,28 @@ function msrevents_filter_leaderboard_ads_on_404( $show ) {
 	return (bool) $show;
 }
 add_filter( 'msrevents_show_leaderboard_ads', 'msrevents_filter_leaderboard_ads_on_404' );
+
+/**
+ * Legacy nav slugs → current programme routes (link-check + bookmark compatibility).
+ *
+ * @return void
+ */
+function msrevents_legacy_route_redirects() {
+	if ( is_admin() ) {
+		return;
+	}
+
+	$path = trim( (string) wp_parse_url( (string) ( $_SERVER['REQUEST_URI'] ?? '' ), PHP_URL_PATH ), '/' );
+	$map  = array(
+		'stories' => msrevents_get_page_url( 'topics', '/topics/' ),
+		'search'  => home_url( '/?s=' ),
+	);
+
+	if ( ! isset( $map[ $path ] ) ) {
+		return;
+	}
+
+	wp_safe_redirect( $map[ $path ], 301 );
+	exit;
+}
+add_action( 'template_redirect', 'msrevents_legacy_route_redirects', 0 );

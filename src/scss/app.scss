@@ -20,31 +20,32 @@ Terminal Command - 'npm run watch'
 // Bootstrap 5.3 — trimmed SASS bundle (Phase 19 CSS budget)
 @import 'bootstrap-core';
 
-// Theme-specific layers on top of Bootstrap
+// Theme-specific layers — core stack aligned to Awards reference (hub extensions after header)
 @import 'event-context';
 @import 'hub-layout';
-@import 'filter-bar';
-@import 'a11y';
-@import 'card-media';
+@import 'shell';
+@import 'hero';
+@import 'cta-cluster';
 @import 'listing';
+@import 'logos';
+@import 'filter-bar';
+@import 'card-media';
+@import 'a11y';
+@import 'responsive';
 @import 'ecosystem';
 @import 'programme';
+@import 'companion';
 @import 'site-footer';
-@import 'hero';
-@import 'logos';
-@import 'responsive';
-@import 'header';
-@import 'shell';
-@import 'nav';
 @import 'home-bands';
-@import 'event-ux';
+@import 'header';
+@import 'nav';
 @import 'archive';
 @import 'single';
-@import 'companion';
 @import 'routes';
 @import 'podcasts';
 @import 'publications';
-@import 'responsive-ux';
 @import 'search';
+@import 'event-ux';
+@import 'responsive-ux';
 @import 'content';
 @import 'footer';

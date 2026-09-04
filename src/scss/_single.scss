@@ -128,8 +128,14 @@
 
 	a {
 		font-weight: 600;
-		color: $accent;
+		color: $text-primary;
+		text-decoration: underline;
 		text-underline-offset: 0.15em;
+
+		&:hover,
+		&:focus-visible {
+			color: $accent-light;
+		}
 	}
 }
 

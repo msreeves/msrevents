@@ -1,0 +1,115 @@
+// Shared CTA row spacing — hero, header, panels, journey, featured bands
+
+body.msr-events {
+	--msr-cta-gap: 0.75rem;
+	--msr-cta-stack-gap: 0.625rem;
+	--msr-cta-cluster-mt: 1.25rem;
+	--msr-cta-btn-min-height: 2.75rem;
+	--msr-cta-btn-padding-y: 0.65rem;
+	--msr-cta-btn-padding-x: 1.5rem;
+	--msr-cta-btn-font-size: 0.9375rem;
+}
+
+body.msr-events .events-ctas,
+body.msr-events .ctas,
+body.msr-events .msr-primary-cta__actions {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	gap: var(--msr-cta-gap);
+	margin: 0;
+	padding: 0;
+	list-style: none;
+
+	> .btn,
+	> a.btn,
+	> button.btn {
+		margin: 0;
+		flex: 0 1 auto;
+	}
+}
+
+body.msr-events .msr-primary-cta {
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	gap: var(--msr-cta-stack-gap);
+
+	@include media('>=desktop') {
+		align-items: flex-end;
+	}
+}
+
+body.msr-events .events-cta-panel__body,
+body.msr-events .events-advert-panel__body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: var(--msr-stack-gap);
+}
+
+body.msr-events .events-cta-panel__body .events-ctas,
+body.msr-events .msr-events-hero .events-ctas,
+body.msr-events .events-planner-journey__cta,
+body.msr-events .events-featured-events__cta,
+body.msr-events .events-companion-band__actions {
+	margin-top: var(--msr-cta-cluster-mt);
+}
+
+body.msr-events :is(h1, h2, h3, p, .msr-rich-text) + :is(.events-ctas, .ctas, .msr-primary-cta__actions) {
+	margin-top: var(--msr-cta-cluster-mt);
+}
+
+body.msr-events .events-ctas .btn:not(.btn-sm),
+body.msr-events .ctas .btn:not(.btn-sm),
+body.msr-events .events-planner-journey__cta .btn,
+body.msr-events .events-featured-events__cta .btn {
+	min-height: var(--msr-cta-btn-min-height);
+	padding: var(--msr-cta-btn-padding-y) var(--msr-cta-btn-padding-x);
+	font-size: var(--msr-cta-btn-font-size);
+	font-weight: 700;
+	line-height: 1.25;
+}
+
+body.msr-events .site-header .msr-primary-cta__actions {
+	justify-content: flex-end;
+
+	.btn {
+		min-height: var(--msr-cta-btn-min-height);
+		padding: 0.55rem 1.15rem;
+		font-size: 0.9375rem;
+		font-weight: 700;
+		line-height: 1.25;
+	}
+}
+
+@include media('<=tablet') {
+	body.msr-events .events-ctas,
+	body.msr-events .ctas,
+	body.msr-events .msr-primary-cta__actions {
+		width: 100%;
+		max-width: 20rem;
+		margin-inline: auto;
+	}
+
+	body.msr-events .site-header .msr-primary-cta__actions {
+		max-width: none;
+	}
+}
+
+@include media('<=phone') {
+	body.msr-events .events-ctas,
+	body.msr-events .ctas,
+	body.msr-events .msr-primary-cta__actions {
+		flex-direction: column;
+		align-items: stretch;
+		max-width: 18rem;
+
+		> .btn,
+		> a.btn {
+			width: 100%;
+			text-align: center;
+		}
+	}
+}

@@ -54,6 +54,19 @@
 		align-items: center;
 	}
 
+	#cssmenu > ul {
+		align-items: center;
+		gap: 0.15rem 0.35rem;
+
+		> li > a {
+			font-family: $body-text;
+			font-size: 0.9375rem;
+			font-weight: 600;
+			letter-spacing: 0.02em;
+			padding: 0.5rem 0.75rem;
+		}
+	}
+
 	@include media('>=desktop') {
 		.site-header__mobile-nav.offcanvas {
 			position: static;
@@ -83,6 +96,10 @@
 		.navbar-toggler {
 			display: none;
 		}
+
+		#cssmenu > ul {
+			justify-content: flex-end;
+		}
 	}
 
 	.msr-primary-cta {
@@ -102,6 +119,19 @@
 }
 
 body.msr-events {
+	.btn-primary {
+		background-color: $accent;
+		border-color: $accent;
+		color: $text-primary !important;
+
+		&:hover,
+		&:focus-visible {
+			background-color: $accent-light;
+			border-color: $accent-light;
+			color: $bg-dark !important;
+		}
+	}
+
 	.entry-content p,
 	.msr-rich-text p {
 		font-size: 1.125rem;
@@ -113,6 +143,18 @@ body.msr-events {
 		font-weight: inherit;
 		color: inherit;
 		float: none;
+	}
+
+	.btn-outline-primary {
+		color: $text-primary;
+		border-color: $accent-light;
+
+		&:hover,
+		&:focus-visible {
+			background-color: $accent-light;
+			border-color: $accent-light;
+			color: $bg-dark !important;
+		}
 	}
 
 	section#advert .events-advert-panel,
