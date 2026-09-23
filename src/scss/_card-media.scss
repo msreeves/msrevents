@@ -41,13 +41,20 @@
 	}
 }
 
-.post-card {
+// Equal-height card shell — lift from Awards; keep gallery / sponsor-label Awards-only
+.post-card,
+.nominee-card,
+.partner-card {
 	height: 100%;
 
 	.panel {
 		height: 100%;
 		display: flex;
 		flex-direction: column;
+	}
+
+	&--compact {
+		height: auto;
 	}
 
 	.msr-card-media {

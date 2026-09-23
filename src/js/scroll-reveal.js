@@ -50,7 +50,7 @@ function msreventsRevealNodes(root) {
 	});
 }
 
-window.msrreventsRevealNodes = msreventsRevealNodes;
+window.msreventsRevealNodes = msreventsRevealNodes;
 
 document.addEventListener('DOMContentLoaded', function () {
 	msreventsRevealNodes(document);

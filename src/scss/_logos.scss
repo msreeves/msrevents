@@ -1,65 +1,88 @@
-// Partner / sponsor logo wells — dark surface; MSR blue monochrome for contrast on dark bg
+// Partner / sponsor logo wells — white wells so full-colour logos (incl. light SVGs like On Event) clear logoColourClashes
 $events-logo-blue-filter: brightness(0) saturate(100%) invert(33%) sepia(52%) saturate(1200%)
 	hue-rotate(182deg) brightness(92%) contrast(92%);
 
-.site-header .navbar-brand img.custom-logo,
-.events-logo-tile img,
-.events-main-sponsor__logo img,
-.partner-listing-image.events-logo-tile img {
+// Header mark only — partner / sponsor tile images must stay full-colour (filter turns photos into solid blocks).
+.site-header .navbar-brand img.custom-logo {
 	filter: $events-logo-blue-filter;
 }
 
-.events-logo-tile {
+.events-logo-tile img,
+.msr-logo-tile img,
+.events-main-sponsor__logo img,
+.partner-listing-image.events-logo-tile img,
+.msr-logo-tile__img {
+	filter: none;
+}
+
+.events-logo-tile,
+.msr-logo-tile {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	width: 100%;
-	min-height: 6.5rem;
-	padding: 1rem 1.25rem;
-	background: $surface-mid;
-	border: 1px solid $border-mid;
+	width: auto;
+	max-width: 100%;
+	min-width: 9rem;
+	min-height: 7rem;
+	margin-inline: auto;
+	padding: 1.5rem 1.75rem;
+	background: #ffffff;
+	border: 1px solid rgba(14, 76, 146, 0.18);
 	border-radius: 4px;
 	overflow: hidden;
 	box-sizing: border-box;
 
-	img,
-	.msr-card-media__img {
-		display: block;
+	.msr-logo-tile__link {
+		display: flex;
+		align-items: center;
+		justify-content: center;
 		width: auto;
 		height: auto;
-		max-width: 100%;
-		max-height: 4rem;
-		object-fit: contain;
-		margin: 0 auto;
+		text-decoration: none;
 	}
 
 	.msr-card-media {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		width: 100%;
+		width: auto;
+		height: auto;
 		max-width: 100%;
-		max-height: 4rem;
+		max-height: none;
+		min-height: 0;
 		overflow: hidden;
 		background: transparent;
 		aspect-ratio: auto;
 	}
-}
-
-.events-logo-tile--compact {
-	min-height: 5rem;
-	min-width: 6.5rem;
-	max-width: 8.5rem;
-	padding: 0.65rem 0.85rem;
 
 	img,
+	.msr-logo-tile__img,
 	.msr-card-media__img {
-		max-height: 3.25rem;
+		display: block;
+		width: auto !important;
+		height: auto !important;
+		max-width: min(14rem, 70vw);
+		max-height: 6.5rem;
+		object-fit: contain !important;
+		object-position: center;
+		margin: 0;
 	}
 
-	.msr-card-media {
-		max-height: 3.25rem;
+}
+
+.events-logo-tile--compact,
+.msr-logo-tile--compact {
+	min-width: 6.5rem;
+	min-height: 5rem;
+	padding: 0.75rem 1rem;
+
+	img,
+	.msr-logo-tile__img,
+	.msr-card-media__img {
+		max-width: 7.5rem;
+		max-height: 3.75rem;
 	}
+
 }
 
 .site-header .navbar-brand.events-logo-tile--compact {
@@ -125,12 +148,32 @@ $events-logo-blue-filter: brightness(0) saturate(100%) invert(33%) sepia(52%) sa
 
 body.msr-events {
 	.partner-listing-image.events-logo-tile {
-		background: $surface-mid;
-		border: 1px solid $border-mid;
+		background: #ffffff;
+		border: 1px solid rgba(14, 76, 146, 0.18);
 		box-shadow: none;
 
 		&:hover {
 			box-shadow: 0 4px 16px rgba($accent, 0.2);
 		}
 	}
+}
+
+// Main-sponsor bar: keep a wider landscape well (not the square partner card).
+
+.events-main-sponsor__logo.msr-logo-tile {
+	width: 100%;
+	max-width: 12rem;
+	min-height: 5.5rem;
+}
+
+/* Estate partners page — programme sections */
+.events-partner-programme {
+	margin-block: 2.5rem;
+}
+.events-partner-programme + .events-partner-programme {
+	border-top: 1px solid rgba(255, 255, 255, 0.08);
+	padding-top: 2rem;
+}
+.events-partner-programme__header {
+	margin-bottom: 1.25rem;
 }

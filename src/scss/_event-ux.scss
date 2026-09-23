@@ -39,7 +39,9 @@
 	i {
 		flex-shrink: 0;
 		opacity: 0.9;
-		font-size: 0.85em;
+		// absolute rem — 0.85em of 0.75rem chip text was ~9px (effectively invisible)
+		font-size: 0.95rem;
+		line-height: 1;
 	}
 
 	> span {

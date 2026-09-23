@@ -126,6 +126,55 @@ function msrevents_render_card_media( $post_id = null, $size = 'medium_large', $
 	printf( '<div class="msr-card-media">%s</div>', $image ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 }
 
+
+/**
+ * Partner / sponsor logo for .msr-logo-tile wells (contain — not 16:10 card cover).
+ *
+ * @param int|null $post_id Post ID; defaults to current post.
+ * @param string   $size    Image size.
+ * @param array    $args    Optional link_url, link_target.
+ * @return void
+ */
+function msrevents_render_logo_media( $post_id = null, $size = 'medium_large', $args = array() ) {
+	$post_id  = $post_id ? (int) $post_id : get_the_ID();
+	$thumb_id = msrevents_sanitize_attachment_id( (int) get_post_thumbnail_id( $post_id ) );
+	if ( ! $thumb_id ) {
+		return;
+	}
+
+	$link_url    = isset( $args['link_url'] ) ? esc_url_raw( (string) $args['link_url'] ) : '';
+	$link_target = isset( $args['link_target'] ) ? (string) $args['link_target'] : '_self';
+
+	$image = wp_get_attachment_image(
+		$thumb_id,
+		$size,
+		false,
+		array(
+			'class'    => 'msr-logo-tile__img',
+			'loading'  => 'lazy',
+			'decoding' => 'async',
+			'alt'      => trim( (string) get_post_meta( $thumb_id, '_wp_attachment_image_alt', true ) ) ?: get_the_title( $post_id ),
+		)
+	);
+
+	if ( ! $image ) {
+		return;
+	}
+
+	if ( $link_url ) {
+		printf(
+			'<a class="msr-logo-tile__link" href="%s" target="%s"%s>%s</a>',
+			esc_url( $link_url ),
+			esc_attr( $link_target ),
+			'_blank' === $link_target ? ' rel="noopener noreferrer"' : '',
+			$image // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- wp_get_attachment_image
+		);
+		return;
+	}
+
+	echo $image; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- wp_get_attachment_image
+}
+
 /**
  * Render single portrait frame.
  *

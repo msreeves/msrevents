@@ -43,7 +43,7 @@ function msrevents_render_footer_social_menu() {
 					rel="noopener noreferrer"
 					aria-label="<?php echo esc_attr( $item->title ); ?>"
 				>
-					<i class="fa-brands fa-<?php echo esc_attr( sanitize_title( $item->title ) ); ?> fa-2xl" aria-hidden="true"></i>
+					<i class="fa-brands fa-<?php echo esc_attr( sanitize_title( $item->title ) ); ?>" aria-hidden="true"></i>
 				</a>
 			<?php endforeach; ?>
 		</div>

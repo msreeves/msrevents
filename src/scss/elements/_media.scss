@@ -163,15 +163,9 @@ img {
     }
 }
 
-.awards {
-    .partner-listing-image {
-        img {
-            max-width: 120px;
-        }
-    }
-}
 
-.partner-listing-image {
+/* CONS-B9: do not override programme / neutral logo tiles (loaded after _logos.scss) */
+.partner-listing-image:not(.events-logo-tile):not(.msr-logo-tile) {
     background: #ffffff;
     border-radius: 4px;
     padding: 12px 16px;
@@ -198,8 +192,12 @@ img {
     }
 }
 
+// fa-2xl uses sub-em line-height for inline glyphs; with our font-size that
+// collapses brand icons to ~2px tall (looks like "icons not showing").
 .fa-brands {
-    font-size: 3.2rem;
+    font-size: 1.75rem;
+    line-height: 1;
+    display: inline-block;
     color: $gold;
     transition: color 0.2s ease;
 

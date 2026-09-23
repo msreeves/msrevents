@@ -65,6 +65,9 @@ body.msr-events {
 	a:focus-visible,
 	button:focus-visible,
 	.btn:focus-visible,
+	.btn.btn-primary:focus-visible,
+	.btn.btn-outline-primary:focus-visible,
+	.btn.btn-outline-secondary:focus-visible,
 	input:focus-visible,
 	select:focus-visible,
 	textarea:focus-visible,
@@ -73,11 +76,30 @@ body.msr-events {
 	.events-filter-bar__tab:focus-visible,
 	.navbar-toggler:focus-visible,
 	.pagination a.page-numbers:focus-visible,
+	.msr-card-media:focus-visible,
+	.nominee-card a:focus-visible,
 	.events-nav__toggle:focus-visible,
 	.events-nav__link:focus-visible,
 	.events-nav__sublink:focus-visible {
 		outline: 2px solid var(--events-focus-ring, #{$primary});
 		outline-offset: var(--events-focus-offset, 3px);
+	}
+
+	#cssmenu a:focus-visible {
+		outline-color: var(--events-focus-ring, #{$primary});
+		outline-offset: 2px;
+	}
+
+	.site-header .msr-primary-cta {
+		.btn:focus-visible {
+			outline: 2px solid var(--events-focus-ring, #{$primary});
+			outline-offset: 3px;
+		}
+	}
+
+	.btn-load-more:focus-visible {
+		outline: 2px solid var(--events-focus-ring, #{$primary});
+		outline-offset: 3px;
 	}
 
 	.btn,
@@ -87,6 +109,7 @@ body.msr-events {
 	.navbar-brand,
 	.events-filter-bar__link,
 	.events-filter-bar__tab,
+	.post-card__categories a,
 	.events-site-footer__links a,
 	.events-site-footer__social-link,
 	.events-nav__link,
@@ -114,6 +137,7 @@ body.msr-events {
 	.navbar-brand,
 	.events-filter-bar__link,
 	.events-filter-bar__tab,
+	.post-card__categories a,
 	.events-site-footer__links a,
 	.events-site-footer__social-link,
 	header #cssmenu > ul > li > a {
@@ -130,6 +154,11 @@ body.msr-events {
 		padding: 0.35rem 0.65rem;
 		align-items: center;
 		justify-content: center;
+	}
+
+	.post-card__categories a {
+		padding: 0.25rem 0.65rem;
+		margin: 0.125rem;
 	}
 
 	.btn,

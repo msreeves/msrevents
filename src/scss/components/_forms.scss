@@ -87,15 +87,39 @@ textarea {
 }
 
 .msr-site-search {
+    // width:100% — margin-inline:auto inside flex .panel otherwise shrink-wraps (~290px)
+    width: 100%;
     max-width: var(--msr-content-max, 72rem);
     margin-inline: auto;
+    align-self: stretch;
 
     .input-group {
+        width: 100%;
         gap: 0.5rem;
     }
 
     .form-control,
     .btn {
         min-height: 2.75rem;
+    }
+
+    .form-control {
+        flex: 1 1 auto;
+        min-width: 0;
+        padding: 0.65rem 1rem;
+    }
+
+    .btn[type="submit"] {
+        background-color: $gold;
+        border-color: $gold;
+        color: $bg-dark;
+        font-weight: 700;
+
+        &:hover,
+        &:focus {
+            background-color: $gold-light;
+            border-color: $gold-light;
+            color: $bg-dark;
+        }
     }
 }

@@ -3,6 +3,11 @@
  */
 document.addEventListener('DOMContentLoaded', function() {
 	document.querySelectorAll('.btn-load-more').forEach(function(button) {
+		if (button.dataset.msrLoadmoreBound === '1') {
+			return;
+		}
+		button.dataset.msrLoadmoreBound = '1';
+
 		button.addEventListener('click', function(e) {
 			e.preventDefault();
 
@@ -74,8 +79,8 @@ document.addEventListener('DOMContentLoaded', function() {
 							: document.querySelector('.latest_posts_wrapper');
 						if (wrap) {
 							wrap.insertAdjacentHTML('beforeend', body);
-							if (typeof window.msrreventsRevealNodes === 'function') {
-								window.msrreventsRevealNodes(wrap);
+							if (typeof window.msreventsRevealNodes === 'function') {
+								window.msreventsRevealNodes(wrap);
 							}
 						}
 						cfg.page = page + 1;

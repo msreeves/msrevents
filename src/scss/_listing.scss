@@ -20,12 +20,12 @@
 
 .post-card {
 	&__title {
-		color: $white;
+		color: $text-primary;
 		font-family: $header-text;
 	}
 
 	&__excerpt {
-		color: $text-primary;
+		color: $text-secondary;
 	}
 }
 
@@ -182,3 +182,10 @@
 	display: inline-block;
 	margin: 0 0.25rem 0.5rem;
 }
+
+.msr-rich-text {
+	> :last-child {
+		margin-bottom: 0;
+	}
+}
+

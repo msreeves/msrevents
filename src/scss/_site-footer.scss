@@ -41,6 +41,11 @@
 	}
 
 	&__social-link {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		min-width: 2.75rem;
+		min-height: 2.75rem;
 		color: $gold;
 		text-decoration: none;
 
@@ -53,6 +58,10 @@
 		&:focus-visible {
 			color: $gold-light;
 			text-decoration: none;
+		}
+
+		.fa-brands {
+			line-height: 1;
 		}
 	}
 }
